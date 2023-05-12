@@ -1,4 +1,5 @@
 # WIA1002 Group 1 Assignment
+##*Important : Don't simply accecpt any pull request!* 
 ---
 Some guidelines for github
 - Use consistent formatting throughout the project. This includes using four spaces for indentation, and avoiding the use of tabs.
@@ -10,4 +11,4 @@ Some guidelines for github
 - Write code that is modular and reusable whenever possible. This means breaking code into logical units that can be easily adapted or reused in other parts of the project.
 - Test your code thoroughly to ensure that it works as expected and integrates smoothly with the rest of the project. This includes writing unit tests, integration tests, and other forms of automated testing as appropriate.
 - Document your code thoroughly, including inline comments and documentation in separate files as appropriate.
-*Important : Don't simply accecpt any pull request!* 
+
