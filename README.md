@@ -1,1 +1,1 @@
-# WIA1002_group1_assignment
+# WIA1002 Group 1 Assignment
