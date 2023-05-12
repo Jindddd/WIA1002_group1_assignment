@@ -1,5 +1,5 @@
 # WIA1002 Group 1 Assignment
-##*Important : Don't simply accecpt any pull request!* 
+*Important : Don't simply accecpt any pull request!* 
 ---
 Some guidelines for github
 - Use consistent formatting throughout the project. This includes using four spaces for indentation, and avoiding the use of tabs.
