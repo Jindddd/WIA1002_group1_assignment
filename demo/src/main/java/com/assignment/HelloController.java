@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.assignment;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -9,6 +9,6 @@ public class HelloController {
 
     @FXML
     protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+        welcomeText.setText("Go do your work :)");
     }
 }
