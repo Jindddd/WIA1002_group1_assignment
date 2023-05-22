@@ -3,7 +3,7 @@ package com.assignment;
 import java.util.Random;
 import java.util.Scanner;
 
-public class EncryptDecrypt {
+public class TextConverter {
 
     private static final int MIN_SHIFT = 1;
     private static final int MAX_SHIFT = 25;
