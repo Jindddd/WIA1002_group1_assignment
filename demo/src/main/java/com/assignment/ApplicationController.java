@@ -1,54 +1,89 @@
 package com.assignment;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
 
 import java.io.IOException;
 import java.util.Objects;
 
 public class ApplicationController {
-    @FXML
-    private Parent root;
     private Stage stage;
     private Scene scene;
-    @FXML
-    private Button button;
-    private double x, y;
-    private Label welcomeText;
+    private Parent root;
 
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Go do your work :)");
-    }
-
-    @FXML
-    public void jumpToRandomLocation() {
-        button.setLayoutX(Math.random() * (498 - 300) + 200);
-    }
-
-    @FXML
-    public void switchToScene1 (ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("scene1.fxml")));
+    public void switchToHierarchyScene(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("hierarchyScene.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
 
-    @FXML
-    public void switchToScene2 (ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("scene2.fxml")));
+    public void switchToSoldierArrangement(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("soldierArrangement.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setResizable(false);
         scene = new Scene(root);
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToBorrowingArrow(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("borrowingArrow.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToEnemyFortress(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("enemyFortress.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToFood(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("foodHarvesting.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToTextConverter(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("textConverter.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToRedCliff(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("redCliff.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToEngaging(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("engagingCaoCao.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
