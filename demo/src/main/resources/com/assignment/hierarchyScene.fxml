@@ -62,6 +62,11 @@
                   <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
                </padding>
             </Label>
+            <Button layoutX="194.0" layoutY="220.0" mnemonicParsing="false" onAction="#printHierarchy" prefHeight="159.0" prefWidth="354.0" text="Generate Hierarchy">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Button>
          </children></AnchorPane>
    </items>
 </SplitPane>
