@@ -86,6 +86,12 @@ public class CharacterNode<T> implements Iterable<CharacterNode<T>> {
 		return childNode;
 	}
 
+	public void addChild(CharacterNode<T> childNode) {
+		childNode.parent = this;
+		this.children.add(childNode);
+		this.registerChildForSearch(childNode);
+	}
+
 	public int getLevel() {
 		if (this.isRoot())
 			return 0;
@@ -110,6 +116,14 @@ public class CharacterNode<T> implements Iterable<CharacterNode<T>> {
 		return null;
 	}
 
+	public int getStrength() {
+		return strength;
+	}
+
+	public int getIntelligence() {
+		return intelligence;
+	}
+
 	@Override
 	public String toString() {
 		if (position.equals("Emperor")) {
@@ -125,5 +139,4 @@ public class CharacterNode<T> implements Iterable<CharacterNode<T>> {
 		CharacterNodeIter<T> iter = new CharacterNodeIter<T>(this);
 		return iter;
 	}
-
 }

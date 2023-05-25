@@ -2,7 +2,8 @@ package com.assignment;
 
 public class FormingWuKingdomHierarchy {
     public static void main(String[] args) {
-        CharacterNode<String> treeRoot = DataOfKingdom.getSet();
+        DataOfKingdom dataOfKingdom = new DataOfKingdom();
+        CharacterNode<String> treeRoot = dataOfKingdom.getSet();
         // Implicitly utilizes the iterator provided by the CharacterNode<T> class
         for (CharacterNode<String> node : treeRoot) {
             String indent = createIndent(node.getLevel());
