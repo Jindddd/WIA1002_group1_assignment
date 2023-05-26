@@ -1,5 +1,7 @@
 # WIA1002 Group 1 Assignment
-Colour used for GUI -> Blue: #006284
+Colour used for GUI
+-> Brown : #46252a (Default text color)
+-> Blue: #006284
 
 *Important : Don't simply accecpt any pull request!* 
 ---
