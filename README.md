@@ -1,4 +1,6 @@
 # WIA1002 Group 1 Assignment
+Colour used for GUI -> Blue: #006284
+
 *Important : Don't simply accecpt any pull request!* 
 ---
 Some guidelines for github
