@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -25,18 +26,6 @@ public class ApplicationController {
     private Stage stage;
     private Scene scene;
     private Parent root;
-    @FXML
-    Label calculatedTextLabel;
-    @FXML
-    Button submitButton;
-    @FXML
-    TextField frontTextField;
-    @FXML
-    TextField leftTextField;
-    @FXML
-    TextField rightTextField;
-    @FXML
-    TextField backTextField;
 
 
     public void switchToHierarchyScene(ActionEvent event) throws IOException {
@@ -179,21 +168,12 @@ public class ApplicationController {
         viewer.enableAutoLayout();
     }
 
-    public void submit(ActionEvent event) {
-        try {
-            String front = frontTextField.getText();
-            String left = leftTextField.getText();
-            String right = rightTextField.getText();
-            String back = backTextField.getText();
+    void printError(StringBuilder errors) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Warning");
+        alert.setHeaderText("Warning");
+        alert.setContentText(errors.toString());
 
-            System.out.println(front + " " + left + " " + right + " " + back);
-            displayCalculate(front, left, right, back);
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-    }
-
-    public void displayCalculate(String front,String left, String right, String back){
-        calculatedTextLabel.setText("Front: " + front + "\nLeft: " + left + "\nRight: " + right + "\nBack: " + back);
+        alert.showAndWait();
     }
 }

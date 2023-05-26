@@ -33,26 +33,28 @@ public class EnemyFortressAttack {
         }
 
         public List<List<Integer>> bfs(int src, int dst) {
-            List<List<Integer>> allPaths = new ArrayList<>();
+            List<List<Integer>> allPaths = new ArrayList<>(); // List to store all the paths
             int shortestPathLength = Integer.MAX_VALUE;  // Variable to track the minimum path length
             Set<List<Integer>> visitedPaths = new HashSet<>();  // Set to keep track of visited paths
 
             for (int startNode = 1; startNode <= nodes.size(); startNode++) {
                 Queue<List<Integer>> queue = new LinkedList<>();
-                queue.offer(new ArrayList<>(List.of(src)));
+                queue.offer(new ArrayList<>(List.of(src))); // Add the source node to the queue
 
                 boolean[] visited = new boolean[nodes.size()];
                 visited[startNode - 1] = true;
 
                 while (!queue.isEmpty()) {
-                    List<Integer> currentPath = queue.poll();
+                    List<Integer> currentPath = queue.poll(); // Get the current path
                     int currentNode = currentPath.get(currentPath.size() - 1);
 
+                    // If destination found
                     if (currentNode == dst) {
                         if (currentPath.size() < shortestPathLength) {
                             shortestPathLength = currentPath.size();  // Update the shortest path length
                             allPaths.clear();  // Clear the existing paths as we found a shorter path
                         }
+                        // Add the path to the list of paths only if it is equal the size shortest path
                         if (currentPath.size() == shortestPathLength && !visitedPaths.contains(currentPath)) {
                             allPaths.add(currentPath);
                             visitedPaths.add(currentPath);
@@ -108,7 +110,6 @@ public class EnemyFortressAttack {
         graph.addEdge(2, 1);
         graph.addEdge(2, 4);
         graph.addEdge(3, 1);
-        graph.addEdge(3, 1);
         graph.addEdge(3, 4);
         graph.addEdge(3, 7);
         graph.addEdge(4, 2);
@@ -141,7 +142,7 @@ public class EnemyFortressAttack {
         graph.print();
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the base camp for the enemy base camp:");
+        System.out.print("Enter the base camp for the enemy base camp: ");
         int input = sc.nextInt();
 
         List<List<Integer>> shortestPaths = graph.bfs(1, input);
