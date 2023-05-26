@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.2959866220735786" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.assignment.ApplicationController">
+<SplitPane dividerPositions="0.2959866220735786" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.assignment.BorrowingArrowController">
     <items>
         <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="250.0" SplitPane.resizableWithParent="false">
             <children>
@@ -22,8 +23,7 @@
                             <font>
                                 <Font size="16.0" />
                             </font></Button>
-                        <Button defaultButton="true" alignment="CENTER" layoutX="10.0" layoutY="79.0" mnemonicParsing="false"
-                                onAction="#switchToBorrowingArrow" prefHeight="75.0" prefWidth="250.0" text="Borrowing Arrows with &#10;Straw Boats" textAlignment="CENTER">
+                        <Button alignment="CENTER" defaultButton="true" layoutX="10.0" layoutY="79.0" mnemonicParsing="false" onAction="#switchToBorrowingArrow" prefHeight="75.0" prefWidth="250.0" text="Borrowing Arrows with &#10;Straw Boats" textAlignment="CENTER">
                             <font>
                                 <Font size="16.0" />
                             </font></Button>
@@ -55,15 +55,58 @@
             </children></AnchorPane>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
             <children>
-                <Label fx:id="title" prefHeight="45.0" prefWidth="742.0" text="Borrowing Arrow with Straw Boats"
-                       AnchorPane.leftAnchor="0.0">
+                <Label fx:id="title" prefHeight="45.0" prefWidth="742.0" text="Borrowing Arrow with Straw Boats" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
                     <font>
                         <Font size="30.0" />
                     </font>
-                    <padding>
-                        <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
-                    </padding>
                 </Label>
+            <Label layoutY="65.0" prefHeight="65.0" prefWidth="724.0" text="Enter number of Enter number of straw men for the directions. Number of straw men in one direction must be 0-100." wrapText="true" AnchorPane.leftAnchor="10.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="frontTextField" layoutX="85.0" layoutY="130.0" prefHeight="25.0" prefWidth="150.0" promptText="0 - 100" AnchorPane.leftAnchor="85.0" AnchorPane.topAnchor="130.0" />
+            <Label fx:id="frontLabel" alignment="CENTER_RIGHT" layoutX="30.0" layoutY="130.0" prefHeight="25.0" prefWidth="50.0" text="Front: " AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="130.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="leftLabel" alignment="CENTER_RIGHT" layoutX="30.0" layoutY="160.0" prefHeight="25.0" prefWidth="50.0" text="Left: " AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="160.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="rightLabel" alignment="CENTER_RIGHT" layoutX="30.0" layoutY="190.0" prefHeight="25.0" prefWidth="50.0" text="Right: " AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="190.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="backLabel" alignment="CENTER_RIGHT" layoutX="30.0" layoutY="220.0" prefHeight="25.0" prefWidth="50.0" text="Back: " AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="220.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="leftTextField" layoutX="85.0" layoutY="160.0" prefHeight="25.0" prefWidth="150.0" promptText="0 - 100" AnchorPane.leftAnchor="85.0" AnchorPane.topAnchor="160.0" />
+            <TextField fx:id="backTextField" layoutX="85.0" layoutY="220.0" prefHeight="25.0" prefWidth="150.0" promptText="0 - 100" AnchorPane.leftAnchor="85.0" AnchorPane.topAnchor="220.0" />
+            <TextField fx:id="rightTextField" layoutX="85.0" layoutY="190.0" prefHeight="25.0" prefWidth="150.0" promptText="0 - 100" AnchorPane.leftAnchor="85.0" AnchorPane.topAnchor="190.0" />
+            <Button fx:id="submitButton" layoutX="333.0" layoutY="539.0" mnemonicParsing="false" onAction="#submit" prefHeight="36.0" prefWidth="77.0" text="Submit" AnchorPane.topAnchor="539.0" />
+            <Label fx:id="borrowingArrowLabel" alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="10.0" layoutY="376.0" prefHeight="141.0" prefWidth="698.0" text="Boat direction: &#10;Arrow received:&#10;Total:" textFill="#006284" wrapText="true" AnchorPane.leftAnchor="10.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="arrowLabel" alignment="CENTER_RIGHT" layoutX="30.0" layoutY="319.0" prefHeight="25.0" prefWidth="50.0" text="Arrow: " AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="319.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="arrowTextField" layoutX="80.0" layoutY="319.0" prefHeight="25.0" prefWidth="409.0" promptText="2000,1600,1500,..." AnchorPane.leftAnchor="85.0" AnchorPane.topAnchor="319.0" />
+            <Label layoutX="19.0" layoutY="254.0" prefHeight="65.0" prefWidth="724.0" text="Enter the number of arrows shot in each wave. The number of arrows shot should be in decreasing order. Please enter the arrows in the format: 2000,1500,1000,..." wrapText="true" AnchorPane.leftAnchor="10.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Separator layoutY="358.0" prefHeight="17.0" prefWidth="742.0" />
             </children></AnchorPane>
     </items>
 </SplitPane>

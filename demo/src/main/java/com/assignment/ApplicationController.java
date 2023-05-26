@@ -1,11 +1,14 @@
 package com.assignment;
 
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.implementations.MultiGraph;
@@ -22,6 +25,19 @@ public class ApplicationController {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    @FXML
+    Label calculatedTextLabel;
+    @FXML
+    Button submitButton;
+    @FXML
+    TextField frontTextField;
+    @FXML
+    TextField leftTextField;
+    @FXML
+    TextField rightTextField;
+    @FXML
+    TextField backTextField;
+
 
     public void switchToHierarchyScene(ActionEvent event) throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("hierarchyScene.fxml")));
@@ -97,7 +113,7 @@ public class ApplicationController {
 
     public void printHierarchy(ActionEvent event) throws IOException {
         System.setProperty("org.graphstream.ui", "swing");
-        Graph graph = new MultiGraph("Tutorial 1");
+        Graph graph = new MultiGraph("Hierarchy of Wu Kingdom");
 
         int managementGeneralCounter = 1;
         int militaryGeneralCounter = 1;
@@ -158,8 +174,26 @@ public class ApplicationController {
         s2.attachToEdge("Emperor-Chief2");
 
         Viewer viewer = graph.display();
-        viewer.setCloseFramePolicy(Viewer.CloseFramePolicy.HIDE_ONLY);
+        viewer.setCloseFramePolicy(Viewer.CloseFramePolicy.CLOSE_VIEWER);
         viewer.getView(viewer.getDefaultID()).getCamera().getViewCenter();
         viewer.enableAutoLayout();
+    }
+
+    public void submit(ActionEvent event) {
+        try {
+            String front = frontTextField.getText();
+            String left = leftTextField.getText();
+            String right = rightTextField.getText();
+            String back = backTextField.getText();
+
+            System.out.println(front + " " + left + " " + right + " " + back);
+            displayCalculate(front, left, right, back);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public void displayCalculate(String front,String left, String right, String back){
+        calculatedTextLabel.setText("Front: " + front + "\nLeft: " + left + "\nRight: " + right + "\nBack: " + back);
     }
 }
