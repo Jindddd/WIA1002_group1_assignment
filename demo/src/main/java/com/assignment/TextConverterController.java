@@ -1,116 +1,118 @@
 package com.assignment;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
+import javafx.scene.input.ContextMenuEvent;
+import javafx.scene.paint.*;
+import javafx.event.Event;
+
+import java.net.URL;
+import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
+import java.util.ResourceBundle;
 
-public class TextConverter {
-
+public class TextConverterController extends ApplicationController implements Initializable {
+    @FXML
+    TextArea inputTextArea;
+    @FXML
+    TextField shiftValueTextField;
+    @FXML
+    ChoiceBox<String> operationChoiceBox;
+    String[] operations = {"Encrypt", "Decrypt"};
+    @FXML
+    Button convertButton;
+    @FXML
+    Label inputLabel;
+    @FXML
+    Label shiftValueLabel;
+    @FXML
+    Label operationChoiceLabel;
+    @FXML
+    RadioButton securedModeRButton;
+    @FXML
+    TextArea convertedTextCopiableLabel; // Use TextField instead because Label is not copiable
     private static final int MIN_SHIFT = 1;
     private static final int MAX_SHIFT = 25;
-    private static final int SIMPLE_MODE = 1;
-    private static final int SECURED_MODE = 2;
-    private static final int ENCRYPTION = 1;
-    private static final int DECRYPTION = 2;
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        // Disable context menu from coming up when right-clicking on the converted text
+        convertedTextCopiableLabel.addEventFilter(ContextMenuEvent.CONTEXT_MENU_REQUESTED, Event::consume);
+        operationChoiceBox.getItems().addAll(operations);
+        operationChoiceBox.setOnAction(this::showMode);
+    }
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Enter text to encrypt / decrypt.");
-        System.out.print("\nText: ");
-        String text = scanner.nextLine();
-        System.out.println("-------------------------------------------------------------------");
-
-        int shift = getValidShift(scanner);
-        System.out.println("-------------------------------------------------------------------");
-
-        int choice = getValidChoice(scanner);
-        System.out.println("-------------------------------------------------------------------");
-
-        // Encrypt or decrypt the text
-        if (choice == ENCRYPTION) {
-            int mode = getValidMode(scanner);
-            System.out.println("-------------------------------------------------------------------");
-
-            // Simple mode or secured mode
-            if (mode == SIMPLE_MODE) {
-                String encryptedText = encryptText(addRandomParentheses(text), shift);
-                System.out.println("Encrypted text: " + encryptedText);
-            } else if (mode == SECURED_MODE) {
-                String encryptedText = encryptText(addRandomNum(addRandomParentheses(text)), shift);
-                System.out.println("Encrypted text: " + encryptedText);
-            }
-        } else if (choice == DECRYPTION) {
-            String decryptedText = decryptText(text, shift);
-            System.out.println("Decrypted text: " + decryptedText);
+    public void showMode(ActionEvent event) {
+        String choice = operationChoiceBox.getValue();
+        if (choice.equals("Encrypt")) {
+            securedModeRButton.setDisable(false);
+        } else if (choice.equals("Decrypt")) {
+            securedModeRButton.setDisable(true);
         }
     }
 
-    private static int getValidShift(Scanner scanner) {
-        int shift;
-        System.out.println("Enter shift value.");
-        System.out.println("Shift value must be 1-25.");
+    public void convert(ActionEvent event) {
+        inputLabel.setTextFill(Paint.valueOf("black"));
+        shiftValueLabel.setTextFill(Paint.valueOf("black"));
+        operationChoiceLabel.setTextFill(Paint.valueOf("black"));
+        try {
+            // Check if the input format is correct
+            if (validate()) {
+                String text = inputTextArea.getText();
+                String shift = shiftValueTextField.getText();
+                String choice = operationChoiceBox.getValue();
 
-        while (true) {
-            try {
-                System.out.print("\nShift: ");
-                shift = Integer.parseInt(scanner.nextLine());
-                if (shift < MIN_SHIFT || shift > MAX_SHIFT) {
-                    throw new IllegalArgumentException("Shift value must be between 1 and 25.");
+                // Encrypt or decrypt the text
+                if (choice.equals("Encrypt")) {
+                    String mode = securedModeRButton.isSelected() ? "Secured" : "Simple";
+                    // Simple mode or secured mode
+                    if (mode.equals("Simple")) {
+                        String encryptedText = encryptText(addRandomParentheses(text), Integer.parseInt(shift));
+                        convertedTextCopiableLabel.setText("Encrypted text: " + encryptedText);
+                    } else {
+                        String encryptedText = encryptText(addRandomNum(addRandomParentheses(text)), Integer.parseInt(shift));
+                        convertedTextCopiableLabel.setText("Encrypted text: " + encryptedText);
+                    }
+                } else if (choice.equals("Decrypt")) {
+                    String decryptedText = decryptText(text, Integer.parseInt(shift));
+                    convertedTextCopiableLabel.setText("Decrypted text: " + decryptedText);
                 }
-                break;
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid input. Please enter a number.");
-            } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage());
+                convertedTextCopiableLabel.setOpacity(1);
+                // Set text to blue color
+                convertedTextCopiableLabel.setStyle("-fx-text-inner-color: #006284;");
             }
+        } catch (NumberFormatException e) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Warning");
+            alert.setHeaderText("Wrong Input");
+            alert.setContentText("Enter only integer!!!");
+            alert.showAndWait();
         }
-        return shift;
     }
+    boolean validate() {
+        StringBuilder errors = new StringBuilder();
 
-    private static int getValidMode(Scanner scanner) {
-        int mode;
-        System.out.println("Select mode.");
-        System.out.println("[1] Simple Mode.");
-        System.out.println("[2] Secured Mode.");
-
-        while (true) {
-            try {
-                System.out.print("\nMode: ");
-                mode = Integer.parseInt(scanner.nextLine());
-                if (mode != SIMPLE_MODE && mode != SECURED_MODE) {
-                    throw new IllegalArgumentException("Invalid mode. Please enter either 1 or 2.");
-                }
-                break;
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid input. Please enter a number.");
-            } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage());
-            }
+        // Confirm mandatory fields are filled out
+        if (inputTextArea.getText().trim().isEmpty()) {
+            errors.append("Please enter your text to encrypt/decrpyt\n");
+            inputLabel.setTextFill(Paint.valueOf("red"));
         }
-        return mode;
-    }
-
-    private static int getValidChoice(Scanner scanner) {
-        int choice;
-        System.out.println("Select operation:");
-        System.out.println("1. Encryption");
-        System.out.println("2. Decryption");
-
-        while (true) {
-            try {
-                System.out.print("\nOperation: ");
-                choice = Integer.parseInt(scanner.nextLine());
-                if (choice != ENCRYPTION && choice != DECRYPTION) {
-                    throw new IllegalArgumentException("Invalid operation. Please enter either 1 or 2.");
-                }
-                break;
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid input. Please enter a number.");
-            } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage());
-            }
+        if (shiftValueTextField.getText().trim().isEmpty() || Integer.parseInt(shiftValueTextField.getText()) < MIN_SHIFT || Integer.parseInt(shiftValueTextField.getText()) > MAX_SHIFT) {
+            errors.append("Please enter a number between 1-25 for shift value\n");
+            shiftValueLabel.setTextFill(Paint.valueOf("red"));
         }
-        return choice;
+        if (operationChoiceBox.getValue() == null || operationChoiceBox.getValue().trim().isEmpty()){
+            errors.append("Please select a operation choice\n");
+            operationChoiceLabel.setTextFill(Paint.valueOf("red"));
+        }
+        // If any missing information is found, show the error messages and return false
+        if (errors.length() > 0) {
+            printError(errors);
+            return false;
+        }
+        // No errors
+        return true;
     }
 
     /**
@@ -132,7 +134,7 @@ public class TextConverter {
                 if (i + 1 < length && Character.isDigit(text.charAt(i + 1))) {
                     int num = Character.getNumericValue(text.charAt(i + 1));
                     int startIndex = i + 3;
-                    int endIndex = text.indexOf('}', i); // Find the index of the closing curly brace
+                    int endIndex = text.indexOf('}', i);
                     if (endIndex <= startIndex) {
                         // Skip the current iteration if endIndex is invalid
                         continue;
@@ -166,7 +168,7 @@ public class TextConverter {
                 int endIndex = text.indexOf(')', i);
 
                 if (endIndex <= i) {
-                    // Skip the current iteration if endIndex is invalid		
+                    // Skip the current iteration if endIndex is invalid
                     continue;
                 }
 
@@ -250,7 +252,7 @@ public class TextConverter {
                 encryptedText.append('$');
 
             } else if (c == '(') {
-                // Append the opening parenthesis 
+                // Append the opening parenthesis
                 encryptedText.append('(');
                 int endIndex = text.indexOf(')', i);
 
@@ -291,7 +293,7 @@ public class TextConverter {
      * @return The encrypted letter.
      */
     private static char encryptLetter(char letter, int shift) {
-        // Shift the letter 
+        // Shift the letter
         char encryptedChar = (char) (letter + shift);
 
         // Wrap around character in alphabet
@@ -375,7 +377,7 @@ public class TextConverter {
                     // Append opening parenthesis
                     result.append('&').append(random.nextInt(9) + 1).append('{');
                     // Append the substring to be enclosed within parentheses
-                    result.append(string.substring(i + 1, Math.min(i + 1 + innerLength, length)));
+                    result.append(string, i + 1, Math.min(i + 1 + innerLength, length));
                     // Append closing parenthesis
                     result.append('}');
                     // Move index to the end of the enclosed substring
