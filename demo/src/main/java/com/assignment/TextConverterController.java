@@ -9,7 +9,6 @@ import javafx.scene.paint.*;
 import javafx.event.Event;
 
 import java.net.URL;
-import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
 

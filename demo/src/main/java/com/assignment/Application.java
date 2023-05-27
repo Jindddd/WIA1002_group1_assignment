@@ -16,7 +16,7 @@ public class Application extends javafx.application.Application {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("hierarchyScene.fxml")));
         Scene scene = new Scene(root);
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
-        Image icon = new Image("icon.jfif");
+        Image icon = new Image("icon.jpg");
         stage.getIcons().add(icon);
         stage.setTitle("Wu's Kingdom Simulator");
         stage.setScene(scene);

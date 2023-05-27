@@ -8,7 +8,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.paint.*;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
-import scala.util.parsing.combinator.testing.Str;
 
 import java.util.*;
 
