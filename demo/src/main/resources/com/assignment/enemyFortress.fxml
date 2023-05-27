@@ -25,39 +25,39 @@
             <children>
                 <VBox prefHeight="600.0" prefWidth="250.0">
                     <children>
-                        <Button mnemonicParsing="false" onAction="#switchToHierarchyScene" prefHeight="75.0" prefWidth="250.0" text="Hierachy of Wu Kingdom">
+                        <Button focusTraversable="false" mnemonicParsing="false" onAction="#switchToHierarchyScene" prefHeight="75.0" prefWidth="250.0" text="Hierachy of Wu Kingdom" textFill="#46252a">
                             <font>
-                                <Font size="16.0" />
+                                <Font name="System Bold" size="16.0" />
                             </font></Button>
-                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToSoldierArrangement" prefHeight="75.0" prefWidth="250.0" text="Soldier Arrangement">
+                        <Button focusTraversable="false" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToSoldierArrangement" prefHeight="75.0" prefWidth="250.0" text="Soldier Arrangement" textFill="#46252a">
                             <font>
-                                <Font size="16.0" />
+                                <Font name="System Bold" size="16.0" />
                             </font></Button>
-                        <Button alignment="CENTER" layoutX="10.0" layoutY="79.0" mnemonicParsing="false" onAction="#switchToBorrowingArrow" prefHeight="75.0" prefWidth="250.0" text="Borrowing Arrows with &#10;Straw Boats" textAlignment="CENTER">
+                        <Button alignment="CENTER" focusTraversable="false" layoutX="10.0" layoutY="79.0" mnemonicParsing="false" onAction="#switchToBorrowingArrow" prefHeight="75.0" prefWidth="250.0" text="Borrowing Arrows with &#10;Straw Boats" textAlignment="CENTER" textFill="#46252a">
                             <font>
-                                <Font size="16.0" />
+                                <Font name="System Bold" size="16.0" />
                             </font></Button>
-                        <Button defaultButton="true" layoutX="10.0" layoutY="148.0" mnemonicParsing="false" onAction="#switchToEnemyFortress" prefHeight="75.0" prefWidth="250.0" text="Enemy Fortress Attack &#10;" textAlignment="CENTER">
+                        <Button defaultButton="true" focusTraversable="false" layoutX="10.0" layoutY="148.0" mnemonicParsing="false" onAction="#switchToEnemyFortress" prefHeight="75.0" prefWidth="250.0" text="Enemy Fortress Attack &#10;" textAlignment="CENTER" textFill="#46252a">
                             <font>
-                                <Font size="16.0" />
+                                <Font name="System Bold" size="16.0" />
                             </font></Button>
-                        <Button layoutX="10.0" layoutY="217.0" mnemonicParsing="false" onAction="#switchToFood" prefHeight="75.0" prefWidth="250.0" text="Food Harvesting">
+                        <Button focusTraversable="false" layoutX="10.0" layoutY="217.0" mnemonicParsing="false" onAction="#switchToFood" prefHeight="75.0" prefWidth="250.0" text="Food Harvesting" textFill="#46252a">
                             <font>
-                                <Font size="16.0" />
+                                <Font name="System Bold" size="16.0" />
                             </font></Button>
-                        <Button layoutX="10.0" layoutY="286.0" mnemonicParsing="false" onAction="#switchToTextConverter" prefHeight="75.0" prefWidth="250.0" text="Text Converter">
+                        <Button focusTraversable="false" layoutX="10.0" layoutY="286.0" mnemonicParsing="false" onAction="#switchToTextConverter" prefHeight="75.0" prefWidth="250.0" text="Text Converter" textFill="#46252a">
                             <font>
-                                <Font size="16.0" />
+                                <Font name="System Bold" size="16.0" />
                             </font>
                         </Button>
-                        <Button layoutX="10.0" layoutY="355.0" mnemonicParsing="false" onAction="#switchToRedCliff" prefHeight="75.0" prefWidth="250.0" text="Red Cliff on Fire">
+                        <Button focusTraversable="false" layoutX="10.0" layoutY="355.0" mnemonicParsing="false" onAction="#switchToRedCliff" prefHeight="75.0" prefWidth="250.0" text="Red Cliff on Fire" textFill="#46252a">
                             <font>
-                                <Font size="16.0" />
+                                <Font name="System Bold" size="16.0" />
                             </font>
                         </Button>
-                        <Button layoutX="10.0" layoutY="424.0" mnemonicParsing="false" onAction="#switchToEngaging" prefHeight="75.0" prefWidth="250.0" text="Engaging Cao Cao at &#10;Hua Rong Road" textAlignment="CENTER">
+                        <Button focusTraversable="false" layoutX="10.0" layoutY="424.0" mnemonicParsing="false" onAction="#switchToEngaging" prefHeight="75.0" prefWidth="250.0" text="Engaging Cao Cao at &#10;Hua Rong Road" textAlignment="CENTER" textFill="#46252a">
                             <font>
-                                <Font size="16.0" />
+                                <Font name="System Bold" size="16.0" />
                             </font>
                         </Button>
                     </children>
@@ -82,9 +82,9 @@
             <CubicCurve controlX1="-33.0" controlX2="13.0" controlY1="39.0" controlY2="-93.0" endX="77.0" endY="-99.0" fill="#ffffff00" layoutX="302.0" layoutY="361.0" startX="-164.0" startY="7.0" stroke="BLACK" strokeWidth="2.0" />
             <CubicCurve controlX1="-144.0" controlX2="-203.0" controlY1="58.0" controlY2="23.0" endX="-163.0" endY="-54.0" fill="#ffffff00" layoutX="263.0" layoutY="224.0" startX="-171.0" startY="103.0" stroke="BLACK" strokeWidth="2.0" />
             <CubicCurve controlX1="-110.0" controlX2="-119.0" controlY1="16.0" controlY2="-26.0" endX="-110.0" endY="-26.0" fill="#ffffff00" layoutX="293.0" layoutY="337.0" startX="-156.0" startY="7.0" stroke="BLACK" strokeWidth="2.0" />
-                <Label fx:id="title" prefHeight="45.0" prefWidth="742.0" text="Enemy Fortress Attack" AnchorPane.leftAnchor="0.0">
+                <Label fx:id="title" prefHeight="45.0" prefWidth="742.0" text="Enemy Fortress Attack" textFill="#46252a" AnchorPane.leftAnchor="0.0">
                     <font>
-                        <Font size="30.0" />
+                        <Font name="System Bold" size="30.0" />
                     </font>
                     <padding>
                         <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
@@ -375,21 +375,24 @@
                   <Point3D />
                </rotationAxis>
             </Polygon>
-            <Label fx:id="enemyLabel" layoutX="-2.0" layoutY="465.0" prefHeight="46.0" prefWidth="342.0" text="Enter the base camp for the enemy base camp: " AnchorPane.leftAnchor="10.0">
+            <Label fx:id="enemyLabel" layoutX="-2.0" layoutY="465.0" prefHeight="46.0" prefWidth="375.0" text="Enter the base camp for the enemy base camp: " textFill="#46252a" AnchorPane.leftAnchor="10.0">
                <font>
-                  <Font size="16.0" />
+                  <Font name="System Bold" size="16.0" />
                </font>
             </Label>
             <Separator layoutX="1.0" layoutY="456.0" prefHeight="17.0" prefWidth="742.0" />
-            <TextField fx:id="enemyTextField" layoutX="346.0" layoutY="477.0" prefHeight="25.0" prefWidth="46.0" promptText="2-10" />
-            <Button fx:id="submitButton" layoutX="607.0" layoutY="500.0" mnemonicParsing="false" onAction="#submit" prefHeight="60.0" prefWidth="103.0" text="Submit">
+            <TextField fx:id="enemyTextField" layoutX="367.0" layoutY="471.0" prefHeight="35.0" prefWidth="59.0" promptText="2-10">
                <font>
-                  <Font size="20.0" />
+                  <Font name="System Bold" size="16.0" />
+               </font></TextField>
+            <Button fx:id="submitButton" layoutX="607.0" layoutY="500.0" mnemonicParsing="false" onAction="#submit" prefHeight="60.0" prefWidth="103.0" text="Submit" textFill="#46252a">
+               <font>
+                  <Font name="System Bold" size="20.0" />
                </font>
             </Button>
             <Label fx:id="bestPathLabel" alignment="TOP_LEFT" layoutX="10.0" layoutY="506.0" prefHeight="76.0" prefWidth="384.0" text="Best path: " textFill="#006284" AnchorPane.leftAnchor="10.0">
                <font>
-                  <Font size="16.0" />
+                  <Font name="System Bold" size="16.0" />
                </font>
             </Label>
             </children></AnchorPane>
