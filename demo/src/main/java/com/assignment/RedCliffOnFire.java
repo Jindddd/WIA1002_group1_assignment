@@ -17,7 +17,7 @@ public class RedCliffOnFire {
             }
         }
 
-        // Create a second array to verify visited or not
+        // Create a second array to verify visited or naot
         boolean[][] visited = new boolean[matrix.length][matrix[0].length];
         for (boolean[] r : visited) {
             Arrays.fill(r, false);

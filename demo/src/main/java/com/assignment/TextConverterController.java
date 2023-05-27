@@ -95,7 +95,7 @@ public class TextConverterController extends ApplicationController implements In
 
         // Confirm mandatory fields are filled out
         if (inputTextArea.getText().trim().isEmpty()) {
-            errors.append("Please enter your text to encrypt/decrpyt\n");
+            errors.append("Please enter your text to encrypt/decrypt\n");
             inputLabel.setTextFill(Paint.valueOf("red"));
         }
         if (shiftValueTextField.getText().trim().isEmpty() || Integer.parseInt(shiftValueTextField.getText()) < MIN_SHIFT || Integer.parseInt(shiftValueTextField.getText()) > MAX_SHIFT) {

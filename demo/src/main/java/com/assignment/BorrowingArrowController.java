@@ -127,11 +127,10 @@ public class BorrowingArrowController extends ApplicationController {
                                 newBack > (back * 40 / 100) ? (back * 40 / 100) : 0;
             }
         }
-        StringBuilder sb = new StringBuilder();
-        sb.append("Boat direction: ").append(boatDirections).append("\n");
-        sb.append("Arrow received: ").append(captured).append("\n");
-        sb.append("Total: ").append(calculateTotalArrowsCaptured(captured));
-        borrowingArrowLabel.setText(sb.toString());
+        String text = "Boat direction: " + boatDirections + "\n" +
+                "Arrow received: " + captured + "\n" +
+                "Total: " + calculateTotalArrowsCaptured(captured);
+        borrowingArrowLabel.setText(text);
     }
 
     public static String findMaximum(int front, int left, int right, int back) {

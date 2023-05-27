@@ -14,39 +14,39 @@
             <children>
                 <VBox prefHeight="600.0" prefWidth="250.0">
                     <children>
-                        <Button focusTraversable="false" mnemonicParsing="false" onAction="#switchToHierarchyScene" prefHeight="75.0" prefWidth="250.0" text="Hierachy of Wu Kingdom">
+                        <Button focusTraversable="false" mnemonicParsing="false" onAction="#switchToHierarchyScene" prefHeight="75.0" prefWidth="250.0" text="Hierachy of Wu Kingdom" textFill="#46252a">
                             <font>
-                                <Font size="16.0" />
+                                <Font name="System Bold" size="16.0" />
                             </font></Button>
-                        <Button focusTraversable="false" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToSoldierArrangement" prefHeight="75.0" prefWidth="250.0" text="Soldier Arrangement">
+                        <Button focusTraversable="false" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToSoldierArrangement" prefHeight="75.0" prefWidth="250.0" text="Soldier Arrangement" textFill="#46252a">
                             <font>
-                                <Font size="16.0" />
+                                <Font name="System Bold" size="16.0" />
                             </font></Button>
-                        <Button alignment="CENTER" focusTraversable="false" layoutX="10.0" layoutY="79.0" mnemonicParsing="false" onAction="#switchToBorrowingArrow" prefHeight="75.0" prefWidth="250.0" text="Borrowing Arrows with &#10;Straw Boats" textAlignment="CENTER">
+                        <Button alignment="CENTER" focusTraversable="false" layoutX="10.0" layoutY="79.0" mnemonicParsing="false" onAction="#switchToBorrowingArrow" prefHeight="75.0" prefWidth="250.0" text="Borrowing Arrows with &#10;Straw Boats" textAlignment="CENTER" textFill="#46252a">
                             <font>
-                                <Font size="16.0" />
+                                <Font name="System Bold" size="16.0" />
                             </font></Button>
-                        <Button focusTraversable="false" layoutX="10.0" layoutY="148.0" mnemonicParsing="false" onAction="#switchToEnemyFortress" prefHeight="75.0" prefWidth="250.0" text="Enemy Fortress Attack &#10;" textAlignment="CENTER">
+                        <Button focusTraversable="false" layoutX="10.0" layoutY="148.0" mnemonicParsing="false" onAction="#switchToEnemyFortress" prefHeight="75.0" prefWidth="250.0" text="Enemy Fortress Attack &#10;" textAlignment="CENTER" textFill="#46252a">
                             <font>
-                                <Font size="16.0" />
+                                <Font name="System Bold" size="16.0" />
                             </font></Button>
-                        <Button defaultButton="true" focusTraversable="false" layoutX="10.0" layoutY="217.0" mnemonicParsing="false" onAction="#switchToFood" prefHeight="75.0" prefWidth="250.0" text="Food Harvesting">
+                        <Button defaultButton="true" focusTraversable="false" layoutX="10.0" layoutY="217.0" mnemonicParsing="false" onAction="#switchToFood" prefHeight="75.0" prefWidth="250.0" text="Food Harvesting" textFill="#46252a">
                             <font>
-                                <Font size="16.0" />
+                                <Font name="System Bold" size="16.0" />
                             </font></Button>
-                        <Button focusTraversable="false" layoutX="10.0" layoutY="286.0" mnemonicParsing="false" onAction="#switchToTextConverter" prefHeight="75.0" prefWidth="250.0" text="Text Converter">
+                        <Button focusTraversable="false" layoutX="10.0" layoutY="286.0" mnemonicParsing="false" onAction="#switchToTextConverter" prefHeight="75.0" prefWidth="250.0" text="Text Converter" textFill="#46252a">
                             <font>
-                                <Font size="16.0" />
+                                <Font name="System Bold" size="16.0" />
                             </font>
                         </Button>
-                        <Button focusTraversable="false" layoutX="10.0" layoutY="355.0" mnemonicParsing="false" onAction="#switchToRedCliff" prefHeight="75.0" prefWidth="250.0" text="Red Cliff on Fire">
+                        <Button focusTraversable="false" layoutX="10.0" layoutY="355.0" mnemonicParsing="false" onAction="#switchToRedCliff" prefHeight="75.0" prefWidth="250.0" text="Red Cliff on Fire" textFill="#46252a">
                             <font>
-                                <Font size="16.0" />
+                                <Font name="System Bold" size="16.0" />
                             </font>
                         </Button>
-                        <Button focusTraversable="false" layoutX="10.0" layoutY="424.0" mnemonicParsing="false" onAction="#switchToEngaging" prefHeight="75.0" prefWidth="250.0" text="Engaging Cao Cao at &#10;Hua Rong Road" textAlignment="CENTER">
+                        <Button focusTraversable="false" layoutX="10.0" layoutY="424.0" mnemonicParsing="false" onAction="#switchToEngaging" prefHeight="75.0" prefWidth="250.0" text="Engaging Cao Cao at &#10;Hua Rong Road" textAlignment="CENTER" textFill="#46252a">
                             <font>
-                                <Font size="16.0" />
+                                <Font name="System Bold" size="16.0" />
                             </font>
                         </Button>
                     </children>
@@ -54,7 +54,7 @@
             </children></AnchorPane>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
             <children>
-                <Label fx:id="title" prefHeight="45.0" prefWidth="742.0" text="Food Harvesting" AnchorPane.leftAnchor="0.0">
+                <Label fx:id="title" prefHeight="45.0" prefWidth="742.0" text="Food Harvesting" textFill="#46252a" AnchorPane.leftAnchor="0.0">
                     <font>
                         <Font size="30.0" />
                     </font>
