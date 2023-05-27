@@ -52,6 +52,8 @@ public class HuaRongRoad {
     public static boolean dfs(int[] start, int[] end) {
         if (!isValid(start[0], start[1]))
             return false;
+
+        // If the cell is the target return true
         if (maze[start[0]][start[1]] == 3)
             return true;
 
