@@ -1,7 +1,5 @@
 package com.assignment;
 
-import scala.Char;
-
 import java.util.ArrayList;
 
 class DataOfKingdom {
