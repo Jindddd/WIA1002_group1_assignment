@@ -82,11 +82,13 @@ public class RedCliffController extends ApplicationController {
                         // Set the label style to red if the value is 1
                         label.setStyle("-fx-text-fill: " + (matrix[i][j] == 1 ? "red;" : "black;") +
                                 "-fx-font-weight: bold; " +
-                                "-fx-font-size: 16px;");
+                                "-fx-font-size: 18px;");
                         // Add the label to the grid pane
                         myGridPane.add(label, j, i);
-                        myGridPane.getColumnConstraints().add(new ColumnConstraints(10));
-                        myGridPane.getRowConstraints().add(new RowConstraints(10));
+                        myGridPane.getColumnConstraints().add(new ColumnConstraints(16));
+                        myGridPane.getRowConstraints().add(new RowConstraints(16));
+                        myGridPane.setVgap(5);
+                        myGridPane.setHgap(5);
                     }
                 }
 
