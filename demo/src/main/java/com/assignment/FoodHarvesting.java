@@ -1,3 +1,5 @@
+package com.assignment;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -64,25 +66,21 @@ public class FoodHarvesting {
         visitedNodes.add(currentNode);
 
         if (nodeWithoutFood == 4) {
-            System.out.println("Node 2 will not be in the path.");
             System.out.print("Node " + nodeWithoutFood + " must be included in the path to ensure the connectivity of all food nodes.\n");
             nodeWithoutFood = 0;
         }
 
         if (nodeWithoutFood == 6) {
-            System.out.println("Node 5 will not be in the path.");
             System.out.print("Node " + nodeWithoutFood + " must be included in the path to ensure the connectivity of all food nodes.\n");
             nodeWithoutFood = 0;
         }
 
         if (nodeWithoutFood == 8) {
-            System.out.println("Node 5 & 6 will not be in the path.");
             System.out.print("Node " + nodeWithoutFood + " must be included in the path to ensure the connectivity of all food nodes.\n");
             nodeWithoutFood = 0;
         }
 
         if (nodeWithoutFood == 7) {
-            System.out.println("Node 3 will not be in the path.");
             System.out.print("Node " + nodeWithoutFood + " must be included in the path to ensure the connectivity of all food nodes.\n");
             nodeWithoutFood = 0;
         }

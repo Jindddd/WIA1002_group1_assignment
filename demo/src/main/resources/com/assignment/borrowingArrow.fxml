@@ -60,7 +60,7 @@
                         <Font name="System Bold" size="30.0" />
                     </font>
                 </Label>
-            <Label layoutY="65.0" prefHeight="65.0" prefWidth="724.0" text="Enter number of Enter number of straw men for the directions. Number of straw men in one direction must be 0-100." textFill="#46252a" wrapText="true" AnchorPane.leftAnchor="10.0">
+            <Label layoutY="65.0" prefHeight="65.0" prefWidth="724.0" text="Enter number of straw men for the directions. Number of straw men in one direction must be 0-100." textFill="#46252a" wrapText="true" AnchorPane.leftAnchor="10.0">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
