@@ -1,3 +1,5 @@
+package com.assignment;
+
 import java.util.*;
 
 public class SoldierArrangement{
