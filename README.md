@@ -1,4 +1,5 @@
 # WIA1002 Group 1 Assignment
+Dimension used: 1280 x 720 (Width X Height)
 Colour used for GUI  
 -> Brown : #46252a (Default text color)  
 -> Blue: #006284
