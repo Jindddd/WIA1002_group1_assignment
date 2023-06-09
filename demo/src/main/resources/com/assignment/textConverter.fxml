@@ -6,109 +6,114 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.2959866220735786" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.assignment.TextConverterController">
-    <items>
-        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="250.0" SplitPane.resizableWithParent="false">
-            <children>
-                <VBox prefHeight="600.0" prefWidth="250.0">
-                    <children>
-                        <Button focusTraversable="false" mnemonicParsing="false" onAction="#switchToHierarchyScene" prefHeight="75.0" prefWidth="250.0" text="Hierachy of Wu Kingdom" textFill="#46252a">
-                            <font>
-                                <Font name="System Bold" size="16.0" />
-                            </font></Button>
-                        <Button focusTraversable="false" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToSoldierArrangement" prefHeight="75.0" prefWidth="250.0" text="Soldier Arrangement" textFill="#46252a">
-                            <font>
-                                <Font name="System Bold" size="16.0" />
-                            </font></Button>
-                        <Button alignment="CENTER" focusTraversable="false" layoutX="10.0" layoutY="79.0" mnemonicParsing="false" onAction="#switchToBorrowingArrow" prefHeight="75.0" prefWidth="250.0" text="Borrowing Arrows with &#10;Straw Boats" textAlignment="CENTER" textFill="#46252a">
-                            <font>
-                                <Font name="System Bold" size="16.0" />
-                            </font></Button>
-                        <Button focusTraversable="false" layoutX="10.0" layoutY="148.0" mnemonicParsing="false" onAction="#switchToEnemyFortress" prefHeight="75.0" prefWidth="250.0" text="Enemy Fortress Attack &#10;" textAlignment="CENTER" textFill="#46252a">
-                            <font>
-                                <Font name="System Bold" size="16.0" />
-                            </font></Button>
-                        <Button focusTraversable="false" layoutX="10.0" layoutY="217.0" mnemonicParsing="false" onAction="#switchToFood" prefHeight="75.0" prefWidth="250.0" text="Food Harvesting" textFill="#46252a">
-                            <font>
-                                <Font name="System Bold" size="16.0" />
-                            </font></Button>
-                        <Button defaultButton="true" focusTraversable="false" layoutX="10.0" layoutY="286.0" mnemonicParsing="false" onAction="#switchToTextConverter" prefHeight="75.0" prefWidth="250.0" text="Text Converter" textFill="#46252a">
-                            <font>
-                                <Font name="System Bold" size="16.0" />
-                            </font>
-                        </Button>
-                        <Button focusTraversable="false" layoutX="10.0" layoutY="355.0" mnemonicParsing="false" onAction="#switchToRedCliff" prefHeight="75.0" prefWidth="250.0" text="Red Cliff on Fire" textFill="#46252a">
-                            <font>
-                                <Font name="System Bold" size="16.0" />
-                            </font>
-                        </Button>
-                        <Button focusTraversable="false" layoutX="10.0" layoutY="424.0" mnemonicParsing="false" onAction="#switchToEngaging" prefHeight="75.0" prefWidth="250.0" text="Engaging Cao Cao at &#10;Hua Rong Road" textAlignment="CENTER" textFill="#46252a">
-                            <font>
-                                <Font name="System Bold" size="16.0" />
-                            </font>
-                        </Button>
-                    </children>
-                </VBox>
-            </children></AnchorPane>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="664.0" prefWidth="819.0">
-            <children>
-                <Label fx:id="title" prefHeight="45.0" prefWidth="742.0" text="Text Converter" textFill="#46252a" AnchorPane.leftAnchor="0.0">
-                    <font>
-                        <Font name="System Bold" size="30.0" />
-                    </font>
-                    <padding>
-                        <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
-                    </padding>
-                </Label>
-            <Label fx:id="inputLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="20.0" layoutY="55.0" prefHeight="35.0" prefWidth="230.0" text="Enter text to encrypt/decrypt:" textFill="#46252a" wrapText="true" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="55.0">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Label>
-            <TextArea fx:id="inputTextArea" layoutX="258.0" layoutY="55.0" prefHeight="200.0" prefWidth="467.0" promptText="Enter your text here." wrapText="true" AnchorPane.leftAnchor="258.0">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </TextArea>
-            <Label fx:id="shiftValueLabel" alignment="CENTER_RIGHT" layoutX="43.0" layoutY="276.0" prefHeight="25.0" prefWidth="214.0" text="Shift value:  " textFill="#46252a" AnchorPane.leftAnchor="43.0" AnchorPane.topAnchor="276.0">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Label>
-            <TextField fx:id="shiftValueTextField" layoutX="258.0" layoutY="273.0" prefHeight="35.0" prefWidth="467.0" promptText="1-25" AnchorPane.leftAnchor="258.0" AnchorPane.topAnchor="273.0">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </TextField>
-            <ChoiceBox fx:id="operationChoiceBox" layoutX="257.0" layoutY="330.0" prefHeight="25.0" prefWidth="158.0" AnchorPane.topAnchor="330.0" />
-            <Label fx:id="operationChoiceLabel" alignment="CENTER_RIGHT" layoutX="37.0" layoutY="329.0" prefHeight="25.0" prefWidth="214.0" text="Operation choice: " textFill="#46252a" AnchorPane.leftAnchor="37.0" AnchorPane.topAnchor="329.0">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Label>
-            <Button fx:id="convertButton" layoutX="597.0" layoutY="329.0" mnemonicParsing="false" onAction="#convert" prefHeight="52.0" prefWidth="119.0" text="Convert">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.assignment.TextConverterController">
+   <children>
+      <VBox fx:id="buttonVBox" alignment="CENTER" layoutX="-2.0" layoutY="-3.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="300.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button focusTraversable="false" mnemonicParsing="false" onAction="#switchToHierarchyScene" prefHeight="65.0" prefWidth="240.0" text="Hierachy of Wu Kingdom" textAlignment="CENTER" textFill="#46252a" wrapText="true">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
-            <RadioButton fx:id="securedModeRButton" layoutX="61.0" layoutY="369.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="214.0" text="Secured:" textFill="#46252a" AnchorPane.leftAnchor="61.0" AnchorPane.topAnchor="369.0">
+            <Button alignment="CENTER" focusTraversable="false" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToSoldierArrangement" prefHeight="65.0" prefWidth="240.0" text="Soldier Arrangement" textFill="#46252a">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+            <Button alignment="CENTER" focusTraversable="false" layoutX="10.0" layoutY="79.0" mnemonicParsing="false" onAction="#switchToBorrowingArrow" prefHeight="65.0" prefWidth="240.0" text="Borrowing Arrows with &#10;Straw Boats" textAlignment="CENTER" textFill="#46252a" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" layoutX="10.0" layoutY="148.0" mnemonicParsing="false" onAction="#switchToEnemyFortress" prefHeight="65.0" prefWidth="240.0" text="Enemy Fortress Attack &#10;" textAlignment="CENTER" textFill="#46252a">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" layoutX="10.0" layoutY="217.0" mnemonicParsing="false" onAction="#switchToFood" prefHeight="65.0" prefWidth="240.0" text="Food Harvesting" textFill="#46252a">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button defaultButton="true" focusTraversable="false" layoutX="10.0" layoutY="286.0" mnemonicParsing="false" onAction="#switchToTextConverter" prefHeight="65.0" prefWidth="240.0" text="Text Converter" textFill="#46252a">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" layoutX="10.0" layoutY="355.0" mnemonicParsing="false" onAction="#switchToRedCliff" prefHeight="65.0" prefWidth="240.0" text="Red Cliff on Fire" textFill="#46252a">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" layoutX="10.0" layoutY="424.0" mnemonicParsing="false" onAction="#switchToEngaging" prefHeight="65.0" prefWidth="240.0" text="Engaging Cao Cao at &#10;Hua Rong Road" textAlignment="CENTER" textFill="#46252a">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="980.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="title" prefHeight="65.0" prefWidth="980.0" text="Text Converter" textFill="#46252a" AnchorPane.leftAnchor="0.0">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+               <padding>
+                  <Insets bottom="20.0" right="10.0" top="20.0" />
+               </padding>
+            </Label>
+            <Label fx:id="inputLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutY="72.0" prefHeight="35.0" prefWidth="255.0" text="Enter text to encrypt/decrypt:" textFill="#46252a" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="72.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="inputTextArea" layoutX="262.0" layoutY="72.0" prefHeight="200.0" prefWidth="651.0" promptText="Enter your text here." wrapText="true" AnchorPane.leftAnchor="270.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </TextArea>
+            <Label fx:id="shiftValueLabel" alignment="CENTER_RIGHT" layoutY="302.0" prefHeight="27.0" prefWidth="255.0" text="Shift value:" textFill="#46252a" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="302.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="shiftValueTextField" layoutX="262.0" layoutY="297.0" prefHeight="35.0" prefWidth="467.0" promptText="1-25" AnchorPane.leftAnchor="270.0" AnchorPane.topAnchor="297.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </TextField>
+            <ChoiceBox fx:id="operationChoiceBox" layoutX="262.0" layoutY="358.0" prefHeight="35.0" prefWidth="170.0" AnchorPane.leftAnchor="270.0" AnchorPane.topAnchor="358.0" />
+            <Label fx:id="operationChoiceLabel" alignment="CENTER_RIGHT" layoutY="361.0" prefHeight="27.0" prefWidth="255.0" text="Operation choice:" textFill="#46252a" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="361.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="convertButton" layoutX="780.0" layoutY="375.0" mnemonicParsing="false" onAction="#convert" prefHeight="72.0" prefWidth="180.0" text="Convert" AnchorPane.rightAnchor="20.0">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Button>
+            <RadioButton fx:id="securedModeRButton" layoutX="144.0" layoutY="412.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefHeight="27.0" prefWidth="143.0" text="Secured:" textFill="#46252a" AnchorPane.leftAnchor="154.0" AnchorPane.topAnchor="412.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
             </RadioButton>
-            <Separator layoutX="-4.0" layoutY="395.0" prefHeight="25.0" prefWidth="742.0" />
-            <TextArea fx:id="convertedTextCopiableLabel" editable="false" layoutX="17.0" layoutY="419.0" opacity="0.5" prefHeight="172.0" prefWidth="708.0" promptText="Converted text." stylesheets="@style.css" wrapText="true" AnchorPane.leftAnchor="20.0">
+            <Separator layoutY="457.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="980.0" AnchorPane.leftAnchor="0.0" />
+            <TextArea fx:id="convertedTextCopiableLabel" editable="false" layoutX="14.0" layoutY="466.0" opacity="0.5" prefHeight="212.0" prefWidth="940.0" promptText="Converted text." stylesheets="@style.css" wrapText="true" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </TextArea>
-            </children></AnchorPane>
-    </items>
-</SplitPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

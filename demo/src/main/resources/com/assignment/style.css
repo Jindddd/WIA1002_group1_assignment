@@ -11,3 +11,7 @@
     -fx-background-position: center center;
     -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
 }
+
+#buttonVBox .button {
+    -fx-background-radius: 0.25em;
+}
