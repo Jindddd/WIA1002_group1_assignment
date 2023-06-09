@@ -9,122 +9,137 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.2959866220735786" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.assignment.BorrowingArrowController">
-    <items>
-        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="250.0" SplitPane.resizableWithParent="false">
-            <children>
-                <VBox prefHeight="600.0" prefWidth="250.0">
-                    <children>
-                        <Button focusTraversable="false" mnemonicParsing="false" onAction="#switchToHierarchyScene" prefHeight="75.0" prefWidth="250.0" text="Hierachy of Wu Kingdom" textFill="#46252a">
-                            <font>
-                                <Font name="System Bold" size="16.0" />
-                            </font></Button>
-                        <Button focusTraversable="false" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToSoldierArrangement" prefHeight="75.0" prefWidth="250.0" text="Soldier Arrangement" textFill="#46252a">
-                            <font>
-                                <Font name="System Bold" size="16.0" />
-                            </font></Button>
-                        <Button alignment="CENTER" defaultButton="true" focusTraversable="false" layoutX="10.0" layoutY="79.0" mnemonicParsing="false" onAction="#switchToBorrowingArrow" prefHeight="75.0" prefWidth="250.0" text="Borrowing Arrows with &#10;Straw Boats" textAlignment="CENTER" textFill="#46252a">
-                            <font>
-                                <Font name="System Bold" size="16.0" />
-                            </font></Button>
-                        <Button focusTraversable="false" layoutX="10.0" layoutY="148.0" mnemonicParsing="false" onAction="#switchToEnemyFortress" prefHeight="75.0" prefWidth="250.0" text="Enemy Fortress Attack &#10;" textAlignment="CENTER" textFill="#46252a">
-                            <font>
-                                <Font name="System Bold" size="16.0" />
-                            </font></Button>
-                        <Button focusTraversable="false" layoutX="10.0" layoutY="217.0" mnemonicParsing="false" onAction="#switchToFood" prefHeight="75.0" prefWidth="250.0" text="Food Harvesting" textFill="#46252a">
-                            <font>
-                                <Font name="System Bold" size="16.0" />
-                            </font></Button>
-                        <Button focusTraversable="false" layoutX="10.0" layoutY="286.0" mnemonicParsing="false" onAction="#switchToTextConverter" prefHeight="75.0" prefWidth="250.0" text="Text Converter" textFill="#46252a">
-                            <font>
-                                <Font name="System Bold" size="16.0" />
-                            </font>
-                        </Button>
-                        <Button focusTraversable="false" layoutX="10.0" layoutY="355.0" mnemonicParsing="false" onAction="#switchToRedCliff" prefHeight="75.0" prefWidth="250.0" text="Red Cliff on Fire" textFill="#46252a">
-                            <font>
-                                <Font name="System Bold" size="16.0" />
-                            </font>
-                        </Button>
-                        <Button focusTraversable="false" layoutX="10.0" layoutY="424.0" mnemonicParsing="false" onAction="#switchToEngaging" prefHeight="75.0" prefWidth="250.0" text="Engaging Cao Cao at &#10;Hua Rong Road" textAlignment="CENTER" textFill="#46252a">
-                            <font>
-                                <Font name="System Bold" size="16.0" />
-                            </font>
-                        </Button>
-                    </children>
-                </VBox>
-            </children></AnchorPane>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-            <children>
-                <Label fx:id="title" prefHeight="45.0" prefWidth="742.0" text="Borrowing Arrow with Straw Boats" textFill="#46252a" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
-                    <font>
-                        <Font name="System Bold" size="30.0" />
-                    </font>
-                </Label>
-            <Label layoutY="65.0" prefHeight="65.0" prefWidth="724.0" text="Enter number of straw men for the directions. Number of straw men in one direction must be 0-100." textFill="#46252a" wrapText="true" AnchorPane.leftAnchor="10.0">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.assignment.BorrowingArrowController">
+   <children>
+      <VBox fx:id="buttonVBox" alignment="CENTER" layoutX="-2.0" layoutY="-3.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="300.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button focusTraversable="false" mnemonicParsing="false" onAction="#switchToHierarchyScene" prefHeight="65.0" prefWidth="240.0" text="Hierachy of Wu Kingdom" textAlignment="CENTER" textFill="#46252a" wrapText="true">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
-            </Label>
-            <TextField fx:id="frontTextField" layoutX="85.0" layoutY="130.0" prefHeight="25.0" prefWidth="150.0" promptText="0 - 100" AnchorPane.leftAnchor="85.0" AnchorPane.topAnchor="130.0">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font></TextField>
-            <Label fx:id="frontLabel" alignment="CENTER_RIGHT" layoutX="30.0" layoutY="134.0" prefHeight="25.0" prefWidth="50.0" text="Front: " textFill="#46252a" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="134.0">
+            </Button>
+            <Button alignment="CENTER" focusTraversable="false" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToSoldierArrangement" prefHeight="65.0" prefWidth="240.0" text="Soldier Arrangement" textFill="#46252a">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
-            </Label>
-            <Label fx:id="leftLabel" alignment="CENTER_RIGHT" layoutX="30.0" layoutY="184.0" prefHeight="25.0" prefWidth="50.0" text="Left: " textFill="#46252a" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="184.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+            <Button alignment="CENTER" defaultButton="true" focusTraversable="false" layoutX="10.0" layoutY="79.0" mnemonicParsing="false" onAction="#switchToBorrowingArrow" prefHeight="65.0" prefWidth="240.0" text="Borrowing Arrows with &#10;Straw Boats" textAlignment="CENTER" textFill="#46252a" wrapText="true">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
-            </Label>
-            <Label fx:id="rightLabel" alignment="CENTER_RIGHT" layoutX="30.0" layoutY="235.0" prefHeight="25.0" prefWidth="50.0" text="Right: " textFill="#46252a" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="235.0">
+            </Button>
+            <Button focusTraversable="false" layoutX="10.0" layoutY="148.0" mnemonicParsing="false" onAction="#switchToEnemyFortress" prefHeight="65.0" prefWidth="240.0" text="Enemy Fortress Attack &#10;" textAlignment="CENTER" textFill="#46252a">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
-            </Label>
-            <Label fx:id="backLabel" alignment="CENTER_RIGHT" layoutX="30.0" layoutY="284.0" prefHeight="25.0" prefWidth="50.0" text="Back: " textFill="#46252a" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="284.0">
+            </Button>
+            <Button focusTraversable="false" layoutX="10.0" layoutY="217.0" mnemonicParsing="false" onAction="#switchToFood" prefHeight="65.0" prefWidth="240.0" text="Food Harvesting" textFill="#46252a">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
-            </Label>
-            <TextField fx:id="leftTextField" layoutX="85.0" layoutY="180.0" prefHeight="25.0" prefWidth="150.0" promptText="0 - 100" AnchorPane.leftAnchor="85.0" AnchorPane.topAnchor="180.0">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font></TextField>
-            <TextField fx:id="backTextField" layoutX="85.0" layoutY="280.0" prefHeight="25.0" prefWidth="150.0" promptText="0 - 100" AnchorPane.leftAnchor="85.0" AnchorPane.topAnchor="280.0">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font></TextField>
-            <TextField fx:id="rightTextField" layoutX="85.0" layoutY="230.0" prefHeight="25.0" prefWidth="150.0" promptText="0 - 100" AnchorPane.leftAnchor="85.0" AnchorPane.topAnchor="230.0">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font></TextField>
-            <Button fx:id="submitButton" layoutX="607.0" layoutY="514.0" mnemonicParsing="false" onAction="#submit" prefHeight="55.0" prefWidth="104.0" text="Submit" textFill="#46252a" AnchorPane.topAnchor="514.0">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font></Button>
-            <Label fx:id="borrowingArrowLabel" alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="10.0" layoutY="444.0" prefHeight="89.0" prefWidth="587.0" text="Boat direction: &#10;Arrow received:&#10;Total:" textFill="#006284" wrapText="true" AnchorPane.leftAnchor="10.0">
+            </Button>
+            <Button focusTraversable="false" layoutX="10.0" layoutY="286.0" mnemonicParsing="false" onAction="#switchToTextConverter" prefHeight="65.0" prefWidth="240.0" text="Text Converter" textFill="#46252a">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
-            </Label>
-            <Label fx:id="arrowLabel" alignment="CENTER_RIGHT" layoutX="23.0" layoutY="394.0" prefHeight="25.0" prefWidth="59.0" text="Arrow: " AnchorPane.leftAnchor="23.0" AnchorPane.topAnchor="394.0">
+            </Button>
+            <Button focusTraversable="false" layoutX="10.0" layoutY="355.0" mnemonicParsing="false" onAction="#switchToRedCliff" prefHeight="65.0" prefWidth="240.0" text="Red Cliff on Fire" textFill="#46252a">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
-            </Label>
-            <TextField fx:id="arrowTextField" layoutX="85.0" layoutY="390.0" prefHeight="25.0" prefWidth="409.0" promptText="2000,1600,1500,..." AnchorPane.leftAnchor="85.0" AnchorPane.topAnchor="390.0">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font></TextField>
-            <Label layoutX="10.0" layoutY="326.0" prefHeight="65.0" prefWidth="724.0" text="Enter the number of arrows shot in each wave. The number of arrows shot should be in decreasing order. Please enter the arrows in the format: 2000,1500,1000,..." textFill="#46252a" wrapText="true" AnchorPane.leftAnchor="10.0">
+            </Button>
+            <Button focusTraversable="false" layoutX="10.0" layoutY="424.0" mnemonicParsing="false" onAction="#switchToEngaging" prefHeight="65.0" prefWidth="240.0" text="Engaging Cao Cao at &#10;Hua Rong Road" textAlignment="CENTER" textFill="#46252a">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
+            </Button>
+         </children>
+      </VBox>
+      <AnchorPane layoutX="300.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="980.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="3.0" layoutY="70.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="910.0" text="Enter number of Enter number of straw men for the directions. Number of straw men in one direction must be 0-100." textFill="#46252a" wrapText="true" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="70.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
             </Label>
-            <Separator layoutX="-2.0" layoutY="427.0" prefHeight="17.0" prefWidth="742.0" />
-            </children></AnchorPane>
-    </items>
-</SplitPane>
+            <TextField fx:id="frontTextField" layoutX="113.0" layoutY="143.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="150.0" promptText="0 - 100" AnchorPane.topAnchor="143.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </TextField>
+            <Label fx:id="frontLabel" alignment="CENTER_RIGHT" layoutX="43.0" layoutY="148.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="60.0" text="Front: " textFill="#46252a" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="148.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="leftLabel" alignment="CENTER_RIGHT" layoutX="43.0" layoutY="193.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="60.0" text="Left: " textFill="#46252a" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="193.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="rightLabel" alignment="CENTER_RIGHT" layoutX="43.0" layoutY="238.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="60.0" text="Right: " textFill="#46252a" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="238.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="backLabel" alignment="CENTER_RIGHT" layoutX="43.0" layoutY="283.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="60.0" text="Back: " textFill="#46252a" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="283.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="leftTextField" layoutX="113.0" layoutY="188.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="150.0" promptText="0 - 100" AnchorPane.topAnchor="188.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="backTextField" layoutX="113.0" layoutY="278.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="150.0" promptText="0 - 100" AnchorPane.topAnchor="278.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="rightTextField" layoutX="113.0" layoutY="233.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="150.0" promptText="0 - 100" AnchorPane.topAnchor="233.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </TextField>
+            <Button fx:id="submitButton" layoutX="749.0" layoutY="621.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#submit" prefHeight="72.0" prefWidth="180.0" text="Submit" textFill="#46252a" AnchorPane.bottomAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="621.0">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Button>
+            <Label fx:id="borrowingArrowLabel" alignment="TOP_LEFT" contentDisplay="CENTER" layoutY="483.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="138.0" prefWidth="743.0" text="Boat direction: &#10;Arrow received:&#10;Total:" textFill="#006284" wrapText="true" AnchorPane.leftAnchor="10.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="arrowLabel" alignment="CENTER_RIGHT" layoutX="40.0" layoutY="312.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="70.0" text="Arrow: " AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="410.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="arrowTextField" layoutX="111.0" layoutY="408.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="409.0" promptText="2000,1600,1500,..." AnchorPane.leftAnchor="111.0" AnchorPane.topAnchor="408.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </TextField>
+            <Label layoutY="334.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="936.0" text="Enter the number of arrows shot in each wave. The number of arrows shot should be in decreasing order. Please enter the arrows in the format: 2000,1500,1000,..." textFill="#46252a" wrapText="true" AnchorPane.leftAnchor="10.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Separator layoutY="464.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="960.0" />
+            <Label fx:id="title" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="77.0" prefWidth="762.0" text="Borrowing Arrow with Straw Boats" textFill="#46252a" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+               <padding>
+                  <Insets bottom="20.0" top="20.0" />
+               </padding>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
