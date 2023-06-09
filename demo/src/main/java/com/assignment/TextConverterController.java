@@ -34,6 +34,7 @@ public class TextConverterController extends ApplicationController implements In
     TextArea convertedTextCopiableLabel; // Use TextField instead because Label is not copiable
     private static final int MIN_SHIFT = 1;
     private static final int MAX_SHIFT = 25;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Disable context menu from coming up when right-clicking on the converted text
@@ -89,6 +90,7 @@ public class TextConverterController extends ApplicationController implements In
             alert.showAndWait();
         }
     }
+
     boolean validate() {
         StringBuilder errors = new StringBuilder();
 
@@ -101,7 +103,7 @@ public class TextConverterController extends ApplicationController implements In
             errors.append("Please enter a number between 1-25 for shift value\n");
             shiftValueLabel.setTextFill(Paint.valueOf("red"));
         }
-        if (operationChoiceBox.getValue() == null || operationChoiceBox.getValue().trim().isEmpty()){
+        if (operationChoiceBox.getValue() == null || operationChoiceBox.getValue().trim().isEmpty()) {
             errors.append("Please select a operation choice\n");
             operationChoiceLabel.setTextFill(Paint.valueOf("red"));
         }
@@ -117,7 +119,7 @@ public class TextConverterController extends ApplicationController implements In
     /**
      * Decrypts the given text using the specified shift value.
      *
-     * @param text The text to decrypt.
+     * @param text  The text to decrypt.
      * @param shift The shift value.
      * @return The decrypted text.
      */
@@ -185,7 +187,8 @@ public class TextConverterController extends ApplicationController implements In
                 char decryptedChar = decryptLetter(c, shift);
                 decryptedText.append(decryptedChar);
 
-            } else if (c != ')' && c != '{' && c != '}' && Character.isDigit(c)) {
+            } else {
+                // Append other characters as they are
                 decryptedText.append(c);
             }
         }
@@ -197,14 +200,14 @@ public class TextConverterController extends ApplicationController implements In
      * Decrypts a single letter using the specified shift value.
      *
      * @param letter The letter to decrypt.
-     * @param shift The shift value.
+     * @param shift  The shift value.
      * @return The decrypted letter.
      */
     private static char decryptLetter(char letter, int shift) {
         char decryptedChar = (char) (letter - shift);
         // Wrap around character in alphabet
         if (decryptedChar < 'a') {
-            decryptedChar += 26;
+            decryptedChar = (char) ('z' - ('a' - decryptedChar - 1) % 26);
         }
         return decryptedChar;
     }
@@ -212,7 +215,7 @@ public class TextConverterController extends ApplicationController implements In
     /**
      * Encrypts the given text using the specified shift value.
      *
-     * @param text The text to encrypt.
+     * @param text  The text to encrypt.
      * @param shift The shift value.
      * @return The encrypted text.
      */
@@ -288,7 +291,7 @@ public class TextConverterController extends ApplicationController implements In
      * Encrypts a single letter using the specified shift value.
      *
      * @param letter The letter to encrypt.
-     * @param shift The shift value.
+     * @param shift  The shift value.
      * @return The encrypted letter.
      */
     private static char encryptLetter(char letter, int shift) {
@@ -297,7 +300,7 @@ public class TextConverterController extends ApplicationController implements In
 
         // Wrap around character in alphabet
         if (encryptedChar > 'z') {
-            encryptedChar -= 26;
+            encryptedChar = (char) ('a' + (encryptedChar - 'z' - 1) % 26);
         }
         return encryptedChar;
     }
@@ -305,86 +308,53 @@ public class TextConverterController extends ApplicationController implements In
     /**
      * Adds random parentheses to the given string.
      *
-     * @param string The string to add parentheses to.
+     * @param text The string to add parentheses to.
      * @return The modified string with random parentheses.
      */
-    public static String addRandomParentheses(String string) {
+    public static String addRandomParentheses(String text) {
+        String[] words = text.split(" ");
         StringBuilder result = new StringBuilder();
-        int length = string.length();
+        int length = words.length;
         Random random = new Random();
 
         for (int i = 0; i < length; i++) {
-            result.append(string.charAt(i));
-            // Check if there is enough remaining length to add parentheses
-            // and if the current character and the next character are not already parentheses
-            if (i < length - 1 && string.charAt(i) != '(' && string.charAt(i + 1) != ')') {
-                // Generate a random decision to determine whether to add parentheses
-                if (random.nextBoolean()) {
-                    // Calculate the maximum length for substring
-                    int maxInnerLength = length - 1 - i;
-
-                    // Check if the maximum inner length is less than 2, meaning it cannot accommodate parentheses
-                    if (maxInnerLength < 2) {
-                        // If not possible to add then skip to next iteration
-                        continue;
-                    }
-
-                    // Generate a random inner length between 2 and maxInnerLength
-                    int innerLength = random.nextInt(maxInnerLength - 2 + 1) + 2;
-
-                    // Append opening parenthesis
-                    result.append('(');
-                    // Append the substring to be enclosed within parentheses
-                    result.append(string, i + 1, Math.min(i + 1 + innerLength, length));
-                    // Append closing parenthesis
-                    result.append(')');
-                    // Move index to the end of the enclosed substring
-                    i += innerLength;
-
+            if (random.nextBoolean()) {
+                if (i == length - 1) {
+                    result.append("(").append(words[i]).append(")");
+                } else {
+                    result.append("(").append(words[i]).append(") ");
                 }
-
+            } else {
+                if (i == length - 1) {
+                    result.append(words[i]);
+                } else {
+                    result.append(words[i]).append(" ");
+                }
             }
         }
-
         return result.toString();
     }
 
-    public static String addRandomNum(String string) {
+    public static String addRandomNum(String text) {
+        String[] words = text.split(" ");
         StringBuilder result = new StringBuilder();
-        int length = string.length();
+        int length = words.length;
         Random random = new Random();
 
         for (int i = 0; i < length; i++) {
-            result.append(string.charAt(i));
-            // Check if there is enough remaining length to add parentheses
-            // and if the current character and the next character are not already parentheses
-            if (i < length - 1 && string.charAt(i) != '(' && string.charAt(i + 1) != ')') {
-                // Generate a random decision to determine whether to add parentheses
-                if (random.nextBoolean()) {
-                    // Calculate the maximum length for substring
-                    int maxInnerLength = length - 1 - i;
-
-                    // Check if the maximum inner length is less than 1, meaning it cannot accommodate parentheses
-                    if (maxInnerLength < 1) {
-                        // If not possible to add then skip to next iteration
-                        continue;
-                    }
-
-                    // Generate a random inner length between 1 and maxInnerLength
-                    int innerLength = random.nextInt(maxInnerLength) + 1;
-
-                    // Append opening parenthesis
-                    result.append('&').append(random.nextInt(9) + 1).append('{');
-                    // Append the substring to be enclosed within parentheses
-                    result.append(string, i + 1, Math.min(i + 1 + innerLength, length));
-                    // Append closing parenthesis
-                    result.append('}');
-                    // Move index to the end of the enclosed substring
-                    i += innerLength;
+            if (random.nextBoolean()) {
+                if (i == length - 1) {
+                    result.append("&").append(random.nextInt(9) + 1).append("{").append(words[i]).append("}");
+                } else
+                    result.append("&").append(random.nextInt(9) + 1).append("{").append(words[i]).append("} ");
+            } else {
+                if (i == length - 1) {
+                    result.append(words[i]);
+                } else {
+                    result.append(words[i]).append(" ");
                 }
             }
         }
-
         return result.toString();
     }
 }

@@ -116,7 +116,7 @@ public class TextConverter {
     /**
      * Decrypts the given text using the specified shift value.
      *
-     * @param text The text to decrypt.
+     * @param text  The text to decrypt.
      * @param shift The shift value.
      * @return The decrypted text.
      */
@@ -184,7 +184,7 @@ public class TextConverter {
                 char decryptedChar = decryptLetter(c, shift);
                 decryptedText.append(decryptedChar);
 
-            } else if (c != ')' && c != '{' && c != '}' && Character.isDigit(c)) {
+            } else {
                 decryptedText.append(c);
             }
         }
@@ -196,14 +196,14 @@ public class TextConverter {
      * Decrypts a single letter using the specified shift value.
      *
      * @param letter The letter to decrypt.
-     * @param shift The shift value.
+     * @param shift  The shift value.
      * @return The decrypted letter.
      */
     private static char decryptLetter(char letter, int shift) {
         char decryptedChar = (char) (letter - shift);
         // Wrap around character in alphabet
         if (decryptedChar < 'a') {
-            decryptedChar += 26;
+            decryptedChar = (char) ('z' - ('a' - decryptedChar - 1) % 26);
         }
         return decryptedChar;
     }
@@ -211,7 +211,7 @@ public class TextConverter {
     /**
      * Encrypts the given text using the specified shift value.
      *
-     * @param text The text to encrypt.
+     * @param text  The text to encrypt.
      * @param shift The shift value.
      * @return The encrypted text.
      */
@@ -287,7 +287,7 @@ public class TextConverter {
      * Encrypts a single letter using the specified shift value.
      *
      * @param letter The letter to encrypt.
-     * @param shift The shift value.
+     * @param shift  The shift value.
      * @return The encrypted letter.
      */
     private static char encryptLetter(char letter, int shift) {
@@ -296,7 +296,7 @@ public class TextConverter {
 
         // Wrap around character in alphabet
         if (encryptedChar > 'z') {
-            encryptedChar -= 26;
+            encryptedChar = (char) ('a' + (encryptedChar - 'z' - 1) % 26);
         }
         return encryptedChar;
     }
@@ -304,86 +304,54 @@ public class TextConverter {
     /**
      * Adds random parentheses to the given string.
      *
-     * @param string The string to add parentheses to.
+     * @param text The string to add parentheses to.
      * @return The modified string with random parentheses.
      */
-    public static String addRandomParentheses(String string) {
+    public static String addRandomParentheses(String text) {
+        String[] words = text.split(" ");
         StringBuilder result = new StringBuilder();
-        int length = string.length();
+        int length = words.length;
         Random random = new Random();
 
         for (int i = 0; i < length; i++) {
-            result.append(string.charAt(i));
-            // Check if there is enough remaining length to add parentheses
-            // and if the current character and the next character are not already parentheses
-            if (i < length - 1 && string.charAt(i) != '(' && string.charAt(i + 1) != ')') {
-                // Generate a random decision to determine whether to add parentheses
-                if (random.nextBoolean()) {
-                    // Calculate the maximum length for substring
-                    int maxInnerLength = length - 1 - i;
-
-                    // Check if the maximum inner length is less than 2, meaning it cannot accommodate parentheses
-                    if (maxInnerLength < 2) {
-                        // If not possible to add then skip to next iteration
-                        continue;
-                    }
-
-                    // Generate a random inner length between 2 and maxInnerLength
-                    int innerLength = random.nextInt(maxInnerLength - 2 + 1) + 2;
-
-                    // Append opening parenthesis
-                    result.append('(');
-                    // Append the substring to be enclosed within parentheses
-                    result.append(string, i + 1, Math.min(i + 1 + innerLength, length));
-                    // Append closing parenthesis
-                    result.append(')');
-                    // Move index to the end of the enclosed substring
-                    i += innerLength;
-
+            if (random.nextBoolean()) {
+                if (i == length - 1) {
+                    result.append("(").append(words[i]).append(")");
+                } else {
+                    result.append("(").append(words[i]).append(") ");
                 }
-
+            } else {
+                if (i == length - 1) {
+                    result.append(words[i]);
+                } else {
+                    result.append(words[i]).append(" ");
+                }
             }
         }
-
         return result.toString();
     }
 
-    public static String addRandomNum(String string) {
+    public static String addRandomNum(String text) {
+        String[] words = text.split(" ");
         StringBuilder result = new StringBuilder();
-        int length = string.length();
+        int length = words.length;
         Random random = new Random();
 
         for (int i = 0; i < length; i++) {
-            result.append(string.charAt(i));
-            // Check if there is enough remaining length to add parentheses
-            // and if the current character and the next character are not already parentheses
-            if (i < length - 1 && string.charAt(i) != '(' && string.charAt(i + 1) != ')') {
-                // Generate a random decision to determine whether to add parentheses
-                if (random.nextBoolean()) {
-                    // Calculate the maximum length for substring
-                    int maxInnerLength = length - 1 - i;
-
-                    // Check if the maximum inner length is less than 1, meaning it cannot accommodate parentheses
-                    if (maxInnerLength < 1) {
-                        // If not possible to add then skip to next iteration
-                        continue;
-                    }
-
-                    // Generate a random inner length between 1 and maxInnerLength
-                    int innerLength = random.nextInt(maxInnerLength) + 1;
-
-                    // Append opening parenthesis
-                    result.append('&').append(random.nextInt(9) + 1).append('{');
-                    // Append the substring to be enclosed within parentheses
-                    result.append(string.substring(i + 1, Math.min(i + 1 + innerLength, length)));
-                    // Append closing parenthesis
-                    result.append('}');
-                    // Move index to the end of the enclosed substring
-                    i += innerLength;
+            if (random.nextBoolean()) {
+                if (i == length - 1) {
+                    result.append("&").append(random.nextInt(9) + 1).append("{").append(words[i]).append("}");
+                } else
+                    result.append("&").append(random.nextInt(9) + 1).append("{").append(words[i]).append("} ");
+            } else {
+                if (i == length - 1) {
+                    result.append(words[i]).append(" ");
+                } else {
+                    result.append(words[i]);
                 }
             }
         }
-
         return result.toString();
     }
 }
+
