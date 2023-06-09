@@ -4,7 +4,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -13,105 +12,113 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.2959866220735786" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.assignment.RedCliffController">
-    <items>
-        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="250.0" SplitPane.resizableWithParent="false">
-            <children>
-                <VBox prefHeight="600.0" prefWidth="250.0">
-                    <children>
-                        <Button focusTraversable="false" mnemonicParsing="false" onAction="#switchToHierarchyScene" prefHeight="75.0" prefWidth="250.0" text="Hierachy of Wu Kingdom" textFill="#46252a">
-                            <font>
-                                <Font name="System Bold" size="16.0" />
-                            </font></Button>
-                        <Button focusTraversable="false" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToSoldierArrangement" prefHeight="75.0" prefWidth="250.0" text="Soldier Arrangement" textFill="#46252a">
-                            <font>
-                                <Font name="System Bold" size="16.0" />
-                            </font></Button>
-                        <Button alignment="CENTER" focusTraversable="false" layoutX="10.0" layoutY="79.0" mnemonicParsing="false" onAction="#switchToBorrowingArrow" prefHeight="75.0" prefWidth="250.0" text="Borrowing Arrows with &#10;Straw Boats" textAlignment="CENTER" textFill="#46252a">
-                            <font>
-                                <Font name="System Bold" size="16.0" />
-                            </font></Button>
-                        <Button focusTraversable="false" layoutX="10.0" layoutY="148.0" mnemonicParsing="false" onAction="#switchToEnemyFortress" prefHeight="75.0" prefWidth="250.0" text="Enemy Fortress Attack &#10;" textAlignment="CENTER" textFill="#46252a">
-                            <font>
-                                <Font name="System Bold" size="16.0" />
-                            </font></Button>
-                        <Button focusTraversable="false" layoutX="10.0" layoutY="217.0" mnemonicParsing="false" onAction="#switchToFood" prefHeight="75.0" prefWidth="250.0" text="Food Harvesting" textFill="#46252a">
-                            <font>
-                                <Font name="System Bold" size="16.0" />
-                            </font></Button>
-                        <Button focusTraversable="false" layoutX="10.0" layoutY="286.0" mnemonicParsing="false" onAction="#switchToTextConverter" prefHeight="75.0" prefWidth="250.0" text="Text Converter" textFill="#46252a">
-                            <font>
-                                <Font name="System Bold" size="16.0" />
-                            </font>
-                        </Button>
-                        <Button defaultButton="true" layoutX="10.0" layoutY="355.0" mnemonicParsing="false" onAction="#switchToRedCliff" prefHeight="75.0" prefWidth="250.0" text="Red Cliff on Fire" textFill="#46252a">
-                            <font>
-                                <Font name="System Bold" size="16.0" />
-                            </font>
-                        </Button>
-                        <Button focusTraversable="false" layoutX="10.0" layoutY="424.0" mnemonicParsing="false" onAction="#switchToEngaging" prefHeight="75.0" prefWidth="250.0" text="Engaging Cao Cao at &#10;Hua Rong Road" textAlignment="CENTER" textFill="#46252a">
-                            <font>
-                                <Font name="System Bold" size="16.0" />
-                            </font>
-                        </Button>
-                    </children>
-                </VBox>
-            </children></AnchorPane>
-        <AnchorPane fx:id="clusterAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-            <children>
-                <Label fx:id="title" prefHeight="45.0" prefWidth="742.0" text="Red Cliff on Fire" textFill="#46252a" AnchorPane.leftAnchor="0.0">
-                    <font>
-                        <Font name="System Bold" size="30.0" />
-                    </font>
-                    <padding>
-                        <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
-                    </padding>
-                </Label>
-            <Button fx:id="submitButton" layoutX="612.0" layoutY="523.0" mnemonicParsing="false" onAction="#submit" text="Submit" textFill="#46252a">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.assignment.RedCliffController">
+   <children>
+      <VBox fx:id="buttonVBox" alignment="CENTER" layoutX="-2.0" layoutY="-3.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="300.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button focusTraversable="false" mnemonicParsing="false" onAction="#switchToHierarchyScene" prefHeight="65.0" prefWidth="240.0" text="Hierachy of Wu Kingdom" textAlignment="CENTER" textFill="#46252a" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" focusTraversable="false" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToSoldierArrangement" prefHeight="65.0" prefWidth="240.0" text="Soldier Arrangement" textFill="#46252a">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+            <Button alignment="CENTER" focusTraversable="false" layoutX="10.0" layoutY="79.0" mnemonicParsing="false" onAction="#switchToBorrowingArrow" prefHeight="65.0" prefWidth="240.0" text="Borrowing Arrows with &#10;Straw Boats" textAlignment="CENTER" textFill="#46252a" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" layoutX="10.0" layoutY="148.0" mnemonicParsing="false" onAction="#switchToEnemyFortress" prefHeight="65.0" prefWidth="240.0" text="Enemy Fortress Attack &#10;" textAlignment="CENTER" textFill="#46252a">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" layoutX="10.0" layoutY="217.0" mnemonicParsing="false" onAction="#switchToFood" prefHeight="65.0" prefWidth="240.0" text="Food Harvesting" textFill="#46252a">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" layoutX="10.0" layoutY="286.0" mnemonicParsing="false" onAction="#switchToTextConverter" prefHeight="65.0" prefWidth="240.0" text="Text Converter" textFill="#46252a">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button defaultButton="true" focusTraversable="false" layoutX="10.0" layoutY="355.0" mnemonicParsing="false" onAction="#switchToRedCliff" prefHeight="65.0" prefWidth="240.0" text="Red Cliff on Fire" textFill="#46252a">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button focusTraversable="false" layoutX="10.0" layoutY="424.0" mnemonicParsing="false" onAction="#switchToEngaging" prefHeight="65.0" prefWidth="240.0" text="Engaging Cao Cao at &#10;Hua Rong Road" textAlignment="CENTER" textFill="#46252a">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <AnchorPane fx:id="clusterAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="980.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label fx:id="title" prefHeight="65.0" prefWidth="980.0" text="Red Cliff on Fire" textFill="#46252a" AnchorPane.leftAnchor="0.0">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+               <padding>
+                  <Insets bottom="20.0" right="10.0" top="20.0" />
+               </padding>
+            </Label>
+            <Button fx:id="submitButton" layoutX="612.0" layoutY="523.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#submit" prefHeight="72.0" prefWidth="180.0" text="Submit" textFill="#46252a" AnchorPane.bottomAnchor="40.0" AnchorPane.rightAnchor="40.0">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Button>
-            <Label fx:id="columnLabel" alignment="CENTER_RIGHT" layoutX="20.0" layoutY="72.0" prefHeight="25.0" prefWidth="71.0" text="Column: " textFill="#46252a" AnchorPane.leftAnchor="20.0">
+            <Label fx:id="columnLabel" alignment="CENTER_RIGHT" layoutX="-1.0" layoutY="85.0" prefHeight="27.0" prefWidth="80.0" text="Column: " textFill="#46252a" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="85.0">
                <font>
-                  <Font name="System Bold" size="16.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label fx:id="rowLabel" alignment="CENTER_RIGHT" layoutX="20.0" layoutY="118.0" prefHeight="25.0" prefWidth="71.0" text="Row: " textFill="#46252a" AnchorPane.leftAnchor="20.0">
+            <Label fx:id="rowLabel" alignment="CENTER_RIGHT" layoutX="8.0" layoutY="145.0" prefHeight="25.0" prefWidth="80.0" text="Row: " textFill="#46252a" AnchorPane.leftAnchor="8.0" AnchorPane.topAnchor="145.0">
                <font>
-                  <Font name="System Bold" size="16.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="columnTextField" layoutX="96.0" layoutY="67.0" prefHeight="35.0" prefWidth="265.0" promptText="Enter a number">
+            <TextField fx:id="columnTextField" layoutX="90.0" layoutY="81.0" prefHeight="39.0" prefWidth="330.0" promptText="Enter a number" AnchorPane.leftAnchor="90.0">
                <font>
-                  <Font name="System Bold" size="16.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="rowTextField" layoutX="96.0" layoutY="114.0" prefHeight="35.0" prefWidth="265.0" promptText="Enter a number">
+            <TextField fx:id="rowTextField" layoutX="80.0" layoutY="142.0" prefHeight="39.0" prefWidth="330.0" promptText="Enter a number" AnchorPane.leftAnchor="90.0">
                <font>
-                  <Font name="System Bold" size="16.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </TextField>
-            <Label fx:id="matrixLabel" alignment="CENTER_RIGHT" layoutX="20.0" layoutY="165.0" prefHeight="25.0" prefWidth="71.0" text="Matrix: " textFill="#46252a">
+            <Label fx:id="matrixLabel" alignment="CENTER_RIGHT" layoutX="8.0" layoutY="205.0" prefHeight="25.0" prefWidth="80.0" text="Matrix: " textFill="#46252a" AnchorPane.topAnchor="205.0">
                <font>
-                  <Font name="System Bold" size="16.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label fx:id="clusterLabel" alignment="TOP_LEFT" layoutX="406.0" layoutY="67.0" prefHeight="443.0" prefWidth="305.0" text="Cluster: &#10;Matrix: " textFill="#46252a">
+            <Label fx:id="clusterLabel" alignment="TOP_LEFT" layoutX="512.0" layoutY="59.0" prefHeight="65.0" prefWidth="379.0" text="Cluster(s): &#10;Matrix: " textFill="#46252a" AnchorPane.rightAnchor="81.0" AnchorPane.topAnchor="60.0">
                <font>
-                  <Font name="System Bold" size="16.0" />
-               </font></Label>
-            <Separator layoutX="382.0" layoutY="2.0" orientation="VERTICAL" prefHeight="600.0" prefWidth="4.0" />
-            <TextArea fx:id="matrixTextArea" layoutX="96.0" layoutY="165.0" prefHeight="411.0" prefWidth="265.0" promptText="1 1 0 0 1 0 0 1 1 1 &#13;&#10;1 0 0 0 1 0 0 0 1 0 &#13;&#10;1 0 1 1 1 0 1 0 1 0 &#13;&#10;1 0 0 0 0 0 1 0 0 0&#13;&#10;1 0 1 1 1 1 1 1 1 1&#13;&#10;0 0 0 0 0 0 0 0 0 0&#13;&#10;1 1 1 1 0 1 1 0 1 0&#13;&#10;1 0 0 0 0 0 0 0 1 0&#13;&#10;1 0 0 0 1 0 1 1 1 1&#13;&#10;1 0 0 0 1 0 0 0 0 0">
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Separator layoutX="467.0" layoutY="40.0" orientation="VERTICAL" prefHeight="660.0" prefWidth="4.0" AnchorPane.bottomAnchor="20.0" />
+            <TextArea fx:id="matrixTextArea" layoutX="80.0" layoutY="204.0" prefHeight="450.0" prefWidth="330.0" promptText="1 1 0 0 1 0 0 1 1 1 &#13;&#10;1 0 0 0 1 0 0 0 1 0 &#13;&#10;1 0 1 1 1 0 1 0 1 0 &#13;&#10;1 0 0 0 0 0 1 0 0 0&#13;&#10;1 0 1 1 1 1 1 1 1 1&#13;&#10;0 0 0 0 0 0 0 0 0 0&#13;&#10;1 1 1 1 0 1 1 0 1 0&#13;&#10;1 0 0 0 0 0 0 0 1 0&#13;&#10;1 0 0 0 1 0 1 1 1 1&#13;&#10;1 0 0 0 1 0 0 0 0 0" AnchorPane.leftAnchor="90.0">
                <font>
-                  <Font name="System Bold" size="16.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </TextArea>
-            <GridPane fx:id="myGridPane" hgap="5.0" layoutX="406.0" layoutY="118.0" mouseTransparent="true" prefHeight="396.0" prefWidth="305.0" vgap="5.0">
-              <rowConstraints>
-                <RowConstraints maxHeight="-Infinity" minHeight="16.0" prefHeight="16.0" vgrow="NEVER" />
-              </rowConstraints>
+            <GridPane fx:id="myGridPane" hgap="5.0" layoutX="512.0" layoutY="116.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="462.0" prefWidth="415.0" vgap="5.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="120.0">
+               <rowConstraints>
+                  <RowConstraints maxHeight="-Infinity" minHeight="16.0" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="16.0" prefHeight="16.0" vgrow="NEVER" />
+               </rowConstraints>
             </GridPane>
-            </children></AnchorPane>
-    </items>
-</SplitPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -12,6 +12,12 @@
     -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
 }
 
+
+#buttonVBox .button {
+    -fx-background-radius: 0.25em;
+}
+
+
 .button {
     -fx-background-color: rgba(255, 255, 255, 0.1);
     -fx-background-radius: 10px;
@@ -25,3 +31,4 @@
 .button:hover {
   -fx-effect: dropshadow(gaussian, rgba(7, 0, 8, 0.3), 0, 1, 2, 5);
 }
+
