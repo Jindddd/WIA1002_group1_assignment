@@ -81,7 +81,7 @@ public class ApplicationController {
     }
 
     public void switchToEngaging(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("huaRongRoad.fxml")));
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("HuaRongRoad.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
