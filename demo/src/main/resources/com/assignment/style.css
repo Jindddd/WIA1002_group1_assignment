@@ -19,7 +19,7 @@
 
 
 .button {
-    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-background-color: rgba(139, 69, 19, 0.2);
     -fx-background-radius: 10px;
     -fx-border-color: #46252a;
     -fx-border-width: 1px;
@@ -29,6 +29,6 @@
 }
 
 .button:hover {
-  -fx-effect: dropshadow(gaussian, rgba(7, 0, 8, 0.3), 0, 1, 2, 5);
+  -fx-effect: dropshadow(gaussian, rgba(7, 0, 8, 0.3), 0, 1, 2, 2);
 }
 
