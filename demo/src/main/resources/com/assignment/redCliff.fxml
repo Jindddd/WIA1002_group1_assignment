@@ -12,16 +12,16 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.assignment.RedCliffController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.assignment.RedCliffController">
    <children>
-      <VBox fx:id="buttonVBox" alignment="CENTER" layoutX="-2.0" layoutY="-3.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="300.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox fx:id="buttonVBox" alignment="CENTER" layoutX="-2.0" layoutY="-3.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="300.0" spacing="20.0" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="11.0">
          <children>
-            <Button focusTraversable="false" mnemonicParsing="false" onAction="#switchToHierarchyScene" prefHeight="65.0" prefWidth="240.0" text="Hierachy of Wu Kingdom" textAlignment="CENTER" textFill="#46252a" wrapText="true">
+            <Button focusTraversable="false" mnemonicParsing="false" onAction="#switchToHierarchyScene" prefHeight="65.0" prefWidth="215.0" text="Hierachy of Wu Kingdom" textAlignment="CENTER" textFill="#46252a" wrapText="true">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" focusTraversable="false" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToSoldierArrangement" prefHeight="65.0" prefWidth="240.0" text="Soldier Arrangement" textFill="#46252a">
+            <Button alignment="CENTER" focusTraversable="false" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToSoldierArrangement" prefHeight="65.0" prefWidth="215.0" text="Soldier Arrangement" textFill="#46252a">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -29,51 +29,51 @@
                   <Insets />
                </VBox.margin>
             </Button>
-            <Button alignment="CENTER" focusTraversable="false" layoutX="10.0" layoutY="79.0" mnemonicParsing="false" onAction="#switchToBorrowingArrow" prefHeight="65.0" prefWidth="240.0" text="Borrowing Arrows with &#10;Straw Boats" textAlignment="CENTER" textFill="#46252a" wrapText="true">
+            <Button alignment="CENTER" focusTraversable="false" layoutX="10.0" layoutY="79.0" mnemonicParsing="false" onAction="#switchToBorrowingArrow" prefHeight="65.0" prefWidth="215.0" text="Borrowing Arrows with &#10;Straw Boats" textAlignment="CENTER" textFill="#46252a">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
-            <Button focusTraversable="false" layoutX="10.0" layoutY="148.0" mnemonicParsing="false" onAction="#switchToEnemyFortress" prefHeight="65.0" prefWidth="240.0" text="Enemy Fortress Attack &#10;" textAlignment="CENTER" textFill="#46252a">
+            <Button focusTraversable="false" layoutX="10.0" layoutY="148.0" mnemonicParsing="false" onAction="#switchToEnemyFortress" prefHeight="65.0" prefWidth="215.0" text="Enemy Fortress Attack &#10;" textAlignment="CENTER" textFill="#46252a">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
-            <Button focusTraversable="false" layoutX="10.0" layoutY="217.0" mnemonicParsing="false" onAction="#switchToFood" prefHeight="65.0" prefWidth="240.0" text="Food Harvesting" textFill="#46252a">
+            <Button focusTraversable="false" layoutX="10.0" layoutY="217.0" mnemonicParsing="false" onAction="#switchToFood" prefHeight="65.0" prefWidth="215.0" text="Food Harvesting" textFill="#46252a">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
-            <Button focusTraversable="false" layoutX="10.0" layoutY="286.0" mnemonicParsing="false" onAction="#switchToTextConverter" prefHeight="65.0" prefWidth="240.0" text="Text Converter" textFill="#46252a">
+            <Button focusTraversable="false" layoutX="10.0" layoutY="286.0" mnemonicParsing="false" onAction="#switchToTextConverter" prefHeight="65.0" prefWidth="215.0" text="Text Converter" textFill="#46252a">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
-            <Button defaultButton="true" focusTraversable="false" layoutX="10.0" layoutY="355.0" mnemonicParsing="false" onAction="#switchToRedCliff" prefHeight="65.0" prefWidth="240.0" text="Red Cliff on Fire" textFill="#46252a">
+            <Button defaultButton="true" focusTraversable="false" layoutX="10.0" layoutY="355.0" mnemonicParsing="false" onAction="#switchToRedCliff" prefHeight="65.0" prefWidth="215.0" text="Red Cliff on Fire" textFill="#46252a">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
-            <Button focusTraversable="false" layoutX="10.0" layoutY="424.0" mnemonicParsing="false" onAction="#switchToEngaging" prefHeight="65.0" prefWidth="240.0" text="Engaging Cao Cao at &#10;Hua Rong Road" textAlignment="CENTER" textFill="#46252a">
+            <Button focusTraversable="false" layoutX="10.0" layoutY="424.0" mnemonicParsing="false" onAction="#switchToEngaging" prefHeight="65.0" prefWidth="215.0" text="Engaging Cao Cao at &#10;Hua Rong Road" textAlignment="CENTER" textFill="#46252a">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
          </children>
       </VBox>
-      <AnchorPane fx:id="clusterAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="980.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <AnchorPane fx:id="clusterAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="650.0" prefWidth="980.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <Label fx:id="title" prefHeight="65.0" prefWidth="980.0" text="Red Cliff on Fire" textFill="#46252a" AnchorPane.leftAnchor="0.0">
                <font>
-                  <Font name="System Bold" size="30.0" />
+                  <Font name="Gill Sans Ultra Bold" size="30.0" />
                </font>
                <padding>
                   <Insets bottom="20.0" right="10.0" top="20.0" />
                </padding>
             </Label>
-            <Button fx:id="submitButton" layoutX="612.0" layoutY="523.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#submit" prefHeight="72.0" prefWidth="180.0" text="Submit" textFill="#46252a" AnchorPane.bottomAnchor="40.0" AnchorPane.rightAnchor="40.0">
+            <Button fx:id="submitButton" layoutX="834.0" layoutY="547.6666666666666" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#submit" prefHeight="60.0" prefWidth="120.0" text="Submit" textFill="#46252a" AnchorPane.bottomAnchor="22.0" AnchorPane.rightAnchor="23.0">
                <font>
-                  <Font name="System Bold" size="20.0" />
+                  <Font name="Dosis ExtraBold" size="24.0" />
                </font>
             </Button>
             <Label fx:id="columnLabel" alignment="CENTER_RIGHT" layoutX="-1.0" layoutY="85.0" prefHeight="27.0" prefWidth="80.0" text="Column: " textFill="#46252a" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="85.0">
@@ -107,7 +107,7 @@
                </font>
             </Label>
             <Separator layoutX="467.0" layoutY="40.0" orientation="VERTICAL" prefHeight="660.0" prefWidth="4.0" AnchorPane.bottomAnchor="20.0" />
-            <TextArea fx:id="matrixTextArea" layoutX="80.0" layoutY="204.0" prefHeight="450.0" prefWidth="330.0" promptText="1 1 0 0 1 0 0 1 1 1 &#13;&#10;1 0 0 0 1 0 0 0 1 0 &#13;&#10;1 0 1 1 1 0 1 0 1 0 &#13;&#10;1 0 0 0 0 0 1 0 0 0&#13;&#10;1 0 1 1 1 1 1 1 1 1&#13;&#10;0 0 0 0 0 0 0 0 0 0&#13;&#10;1 1 1 1 0 1 1 0 1 0&#13;&#10;1 0 0 0 0 0 0 0 1 0&#13;&#10;1 0 0 0 1 0 1 1 1 1&#13;&#10;1 0 0 0 1 0 0 0 0 0" AnchorPane.leftAnchor="90.0">
+            <TextArea fx:id="matrixTextArea" layoutX="80.0" layoutY="204.0" prefHeight="400.0" prefWidth="330.0" promptText="1 1 0 0 1 0 0 1 1 1 &#13;&#10;1 0 0 0 1 0 0 0 1 0 &#13;&#10;1 0 1 1 1 0 1 0 1 0 &#13;&#10;1 0 0 0 0 0 1 0 0 0&#13;&#10;1 0 1 1 1 1 1 1 1 1&#13;&#10;0 0 0 0 0 0 0 0 0 0&#13;&#10;1 1 1 1 0 1 1 0 1 0&#13;&#10;1 0 0 0 0 0 0 0 1 0&#13;&#10;1 0 0 0 1 0 1 1 1 1&#13;&#10;1 0 0 0 1 0 0 0 0 0" AnchorPane.leftAnchor="90.0">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
