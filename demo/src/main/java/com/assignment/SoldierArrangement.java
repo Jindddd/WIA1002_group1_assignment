@@ -5,9 +5,9 @@ import java.util.*;
 public class SoldierArrangement{
     public static void main(String[] args) {
         List<General> generals = new ArrayList<>();
-        generals.add(new General("Sun Quan", 96, 98, 72, 77, 95));
+        /*generals.add(new General("Sun Quan", 96, 98, 72, 77, 95));
         generals.add(new General("Zhang Zhao", 22, 80, 89, 99, 60));
-        generals.add(new General("Zhou Yu", 80, 86, 97, 80, 90));
+        generals.add(new General("Zhou Yu", 80, 86, 97, 80, 90));*/
         generals.add(new General("Xu Sheng", 90, 78, 72, 40, 94));
         generals.add(new General("Zhu Ge Jin", 63, 61, 88, 82, 71));
         generals.add(new General("Lu Su", 43, 87, 84, 88, 53));
