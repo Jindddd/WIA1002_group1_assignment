@@ -9,6 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 
 import java.util.Arrays;
@@ -32,10 +33,11 @@ public class RedCliffController extends ApplicationController {
     GridPane myGridPane;
 
     public void submit(ActionEvent event) {
+        Color brown = new Color(0.2745, 0.1451, 0.1647, 1.0);
         // Reset the Label text to black
-        columnLabel.setTextFill(Paint.valueOf("black"));
-        rowLabel.setTextFill(Paint.valueOf("black"));
-        matrixLabel.setTextFill(Paint.valueOf("black"));
+        columnLabel.setTextFill(brown);
+        rowLabel.setTextFill(brown);
+        matrixLabel.setTextFill(brown);
         // Clear the old GridPane
         myGridPane.getChildren().clear();
 

@@ -53,9 +53,10 @@ public class TextConverterController extends ApplicationController implements In
     }
 
     public void convert(ActionEvent event) {
-        inputLabel.setTextFill(Paint.valueOf("black"));
-        shiftValueLabel.setTextFill(Paint.valueOf("black"));
-        operationChoiceLabel.setTextFill(Paint.valueOf("black"));
+        Color brown = new Color(0.2745, 0.1451, 0.1647, 1.0);
+        inputLabel.setTextFill(brown);
+        shiftValueLabel.setTextFill(brown);
+        operationChoiceLabel.setTextFill(brown);
         try {
             // Check if the input format is correct
             if (validate()) {

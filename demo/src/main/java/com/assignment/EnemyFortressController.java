@@ -60,6 +60,7 @@ public class EnemyFortressController extends ApplicationController{
     Label bestPathLabel;
 
     public void submit(ActionEvent event) {
+        Color brown = new Color(0.2745, 0.1451, 0.1647, 1.0);
         LinearGradient blueGradient = new LinearGradient(
                 0.0, 0.0, 1.0, 1.0, true, CycleMethod.NO_CYCLE,
                 new Stop(0.0, new Color(0.0585, 0.4634, 0.8421, 1.0)),
@@ -78,6 +79,7 @@ public class EnemyFortressController extends ApplicationController{
                 0.0, 0.0, 1.0, 1.0, true, CycleMethod.NO_CYCLE,
                 new Stop(0.0, new Color(1.0, 0.8784, 0.0, 1.0)),
                 new Stop(1.0, new Color(0.4745, 0.6235, 0.0471, 1.0)));
+        bestPathLabel.setTextFill(brown);
         node1.setFill(greenGradient);
         node2.setFill(blueGradient);
         node3.setFill(blueGradient);

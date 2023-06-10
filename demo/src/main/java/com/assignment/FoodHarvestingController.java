@@ -105,16 +105,13 @@ public class FoodHarvestingController extends ApplicationController {
             new Stop(0.0067, new Color(0.0677, 0.3816, 0.0194, 1.0)),
             new Stop(0.6074, new Color(0.3108, 0.75, 0.2708, 1.0)),
             new Stop(1.0, new Color(0.5128, 0.8026, 0.5176, 1.0)));
-    LinearGradient redGradient = new LinearGradient(
-            0.0, 0.0, 1.0, 1.0, true, CycleMethod.NO_CYCLE,
-            new Stop(0.0, new Color(1.0, 0.2549, 0.4235, 1.0)),
-            new Stop(1.0, new Color(1.0, 0.2941, 0.1686, 1.0)));
     LinearGradient yellowGradient = new LinearGradient(
             0.0, 0.0, 1.0, 1.0, true, CycleMethod.NO_CYCLE,
             new Stop(0.0, new Color(1.0, 0.8784, 0.0, 1.0)),
             new Stop(1.0, new Color(0.4745, 0.6235, 0.0471, 1.0)));
     public void submit(ActionEvent event) {
-
+        Color brown = new Color(0.2745, 0.1451, 0.1647, 1.0);
+        bestPathLabel.setTextFill(brown);
         node1.setFill(greenGradient);
         node2.setFill(blueGradient);
         node3.setFill(blueGradient);
@@ -178,7 +175,7 @@ public class FoodHarvestingController extends ApplicationController {
 
                     if (path1 != null) {
                         int lastNode = 0;
-                        String edgeID = "";
+                        String edgeID;
                         sb.append("Path: ");
                         for (int node : path1) {
                             sb.append(node).append(" -> ");
@@ -198,7 +195,7 @@ public class FoodHarvestingController extends ApplicationController {
                     if (path2 != null) {
                         sb.append("Path: ");
                         int lastNode = 0;
-                        String edgeID = "";
+                        String edgeID;
                         for (int node : path2) {
                             sb.append(node).append(" -> ");
                             edgeID =  "edge" + lastNode + node;
@@ -270,7 +267,7 @@ public class FoodHarvestingController extends ApplicationController {
 
         // Confirm mandatory fields are filled out
         if (noFoodNodeTextField.getText().trim().isEmpty() || Integer.parseInt(noFoodNodeTextField.getText()) < 2 || Integer.parseInt(noFoodNodeTextField.getText()) > 10) {
-            errors.append("Please enter available enemy base camp (2-10)\n");
+            errors.append("Please enter one of the node (2-10)\n");
             noFoodNodeLabel.setTextFill(Paint.valueOf("red"));
         }
 
