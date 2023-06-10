@@ -163,7 +163,7 @@ public class EnemyFortressController extends ApplicationController{
                             node10.setFill(pathNodeColor);
                         }
                         if (i != path.size() - 1) {
-                            sb.append(" -> ");
+                            sb.append(" -> "); // Print an arrow between nodes if it is not the last node
                         }
                     }
                     sb.append("\n");
