@@ -1,3 +1,7 @@
+@font-face {
+    src: url('Dosis-ExtraBold.ttf');
+}
+
 .convertedTextCopiableLabel, .convertedTextCopiableLabel:focused {
     -fx-background-color: transparent;
     -fx-background-insets: 0px;
@@ -12,12 +16,6 @@
     -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
 }
 
-
-/*#buttonVBox .button {
-    -fx-background-radius: 0.25em;
-}*/
-
-
 .button {
     -fx-background-color: rgba(139, 69, 19, 0.2);
     -fx-background-radius: 10px;
@@ -26,9 +24,24 @@
     -fx-border-style: solid;
     -fx-border-radius: 0.3em;
     -fx-transition: -fx-effect 0.3s ease;
+    -fx-font-family: "Dosis ExtraBold";
+    -fx-font-size: 1.5em;
+}
+
+.button:default {
+    -fx-background-color: rgba(139, 69, 19, 0.5);
+}
+
+#generateButton {
+    -fx-font-size: 32px;
+}
+
+#submitButton, #findButton, #convertButton{
+    -fx-font-size: 20px;
 }
 
 .button:hover {
-  -fx-effect: dropshadow(gaussian, rgba(7, 0, 8, 0.3), 0, 1, 2, 2);
+    -fx-font-family: "Dosis ExtraBold";
+    -fx-effect: dropshadow(gaussian, rgba(7, 0, 8, 0.3), 0, 1, 2, 2);
 }
 
