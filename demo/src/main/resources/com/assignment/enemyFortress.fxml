@@ -85,19 +85,31 @@
             <CubicCurve controlX1="-138.33331298828125" controlX2="39.0" controlY1="-7.0" controlY2="-23.0" endX="63.66668701171875" endY="-78.33331298828125" fill="#ffffff00" layoutX="361.0" layoutY="405.0" startX="-233.0" startY="-23.0" stroke="BLACK" strokeWidth="2.0" />
             <CubicCurve controlX1="-287.0" controlX2="-224.0" controlY1="34.0" controlY2="-54.0" endX="-184.0" endY="-96.0" fill="#ffffff00" layoutX="322.0" layoutY="268.0" startX="-256.0" startY="76.0" stroke="BLACK" strokeWidth="2.0" />
             <CubicCurve controlX1="-197.0" controlX2="-197.0" controlY1="-24.33331298828125" controlY2="-88.33331298828125" endX="-147.0" endY="-97.66665649414062" fill="#ffffff00" layoutX="352.0" layoutY="381.0" startX="-242.66668701171875" startY="-39.666656494140625" stroke="BLACK" strokeWidth="2.0" />
-            <Label fx:id="title" prefHeight="45.0" prefWidth="742.0" text="Enemy Fortress Attack" textFill="#46252a" AnchorPane.leftAnchor="0.0">
+            <Polygon layoutX="828.0" layoutY="109.0" points="-33.0, 27.0, -43.0, 9.0, -24.1578369140625, 9.0" rotate="-10.5" stroke="BLACK" strokeType="INSIDE" />
+            <Label fx:id="enemyLabel" alignment="CENTER_RIGHT" layoutX="-3.0" layoutY="511.0" prefHeight="46.0" prefWidth="402.0" text="Enter the base camp for the enemy base camp: " textFill="#46252a" AnchorPane.leftAnchor="-3.0">
                <font>
-                  <Font name="Gill Sans Ultra Bold" size="30.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
-               <padding>
-                  <Insets bottom="10.0" right="10.0" top="20.0" />
-               </padding>
             </Label>
-            <StackPane layoutX="47.0" layoutY="380.0" prefHeight="46.0" prefWidth="9.0" />
-            <StackPane layoutX="205.0" layoutY="261.0" prefHeight="46.0" prefWidth="9.0" />
-            <StackPane layoutX="126.0" layoutY="109.0" prefHeight="46.0" prefWidth="9.0">
+            <Separator layoutX="-1.0" layoutY="492.0" prefHeight="17.0" prefWidth="960.0" />
+            <TextField fx:id="enemyTextField" layoutX="402.0" layoutY="514.0" prefHeight="35.0" prefWidth="76.0" promptText="2-10">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </TextField>
+            <Button fx:id="submitButton" layoutX="833.0" layoutY="560.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#submit" prefHeight="60.0" prefWidth="120.0" text="Submit" textFill="#46252a" AnchorPane.bottomAnchor="22.0" AnchorPane.rightAnchor="23.0">
+               <font>
+                  <Font name="Dosis ExtraBold" size="24.0" />
+               </font>
+            </Button>
+            <Label fx:id="bestPathLabel" alignment="TOP_LEFT" layoutX="-1.0" layoutY="552.0" prefHeight="76.0" prefWidth="717.0" text="Best path: " textFill="#006284" AnchorPane.leftAnchor="-1.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <StackPane layoutX="465.0" layoutY="395.0" prefHeight="86.0" prefWidth="110.0">
                <children>
-                  <Circle fx:id="node3" radius="38.0" stroke="BLACK" strokeType="INSIDE">
+                  <Circle fx:id="node10" radius="38.0" stroke="BLACK" strokeType="INSIDE">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -115,22 +127,22 @@
                         </LinearGradient>
                      </fill>
                   </Circle>
-                  <Text fx:id="text3" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
+                  <Text fx:id="text10" strokeType="OUTSIDE" strokeWidth="0.0" text="10">
                      <font>
                         <Font size="30.0" />
                      </font>
                   </Text>
                </children>
             </StackPane>
-            <StackPane layoutX="364.0" layoutY="124.0" prefHeight="46.0" prefWidth="9.0">
+            <StackPane layoutX="833.0" layoutY="353.0" prefHeight="46.0" prefWidth="9.0">
                <children>
-                  <Circle fx:id="node4" radius="38.0" stroke="BLACK" strokeType="INSIDE">
+                  <Circle fx:id="node9" radius="38.0" stroke="BLACK" strokeType="INSIDE">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop>
                                  <color>
-                                    <Color red="0.05882352963089943" green="0.4627451002597809" blue="0.843137264251709" />
+                                    <Color red="0.05847953259944916" green="0.46335282921791077" blue="0.8421052694320679" />
                                  </color>
                               </Stop>
                               <Stop offset="1.0">
@@ -142,7 +154,88 @@
                         </LinearGradient>
                      </fill>
                   </Circle>
-                  <Text fx:id="text4" strokeType="OUTSIDE" strokeWidth="0.0" text="4">
+                  <Text fx:id="text9" strokeType="OUTSIDE" strokeWidth="0.0" text="9">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Text>
+               </children>
+            </StackPane>
+            <StackPane layoutX="630.0" layoutY="294.0" prefHeight="76.0" prefWidth="99.0">
+               <children>
+                  <Circle fx:id="node8" radius="38.0" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.05847953259944916" green="0.46335282921791077" blue="0.8421052694320679" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Circle>
+                  <Text fx:id="text8" strokeType="OUTSIDE" strokeWidth="0.0" text="8">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Text>
+               </children>
+            </StackPane>
+            <StackPane layoutX="764.0" layoutY="133.0" prefHeight="46.0" prefWidth="9.0">
+               <children>
+                  <Circle fx:id="node7" radius="38.0" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.05847953259944916" green="0.46335282921791077" blue="0.8421052694320679" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Circle>
+                  <Text fx:id="text7" strokeType="OUTSIDE" strokeWidth="0.0" text="7">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Text>
+               </children>
+            </StackPane>
+            <StackPane layoutX="397.0" layoutY="249.0" prefHeight="94.0" prefWidth="99.0">
+               <children>
+                  <Circle fx:id="node6" radius="38.0" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.05847953259944916" green="0.46335282921791077" blue="0.8421052694320679" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Circle>
+                  <Text fx:id="text6" strokeType="OUTSIDE" strokeWidth="0.0" text="6">
                      <font>
                         <Font size="30.0" />
                      </font>
@@ -176,10 +269,36 @@
                   </Text>
                </children>
             </StackPane>
-            <StackPane layoutX="442.0" layoutY="273.0" prefHeight="46.0" prefWidth="9.0" />
-            <StackPane layoutX="764.0" layoutY="133.0" prefHeight="46.0" prefWidth="9.0">
+            <StackPane layoutX="364.0" layoutY="124.0" prefHeight="46.0" prefWidth="9.0">
                <children>
-                  <Circle fx:id="node7" radius="38.0" stroke="BLACK" strokeType="INSIDE">
+                  <Circle fx:id="node4" radius="38.0" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.05882352963089943" green="0.4627451002597809" blue="0.843137264251709" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Circle>
+                  <Text fx:id="text4" strokeType="OUTSIDE" strokeWidth="0.0" text="4">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Text>
+               </children>
+            </StackPane>
+            <StackPane layoutX="126.0" layoutY="109.0" prefHeight="46.0" prefWidth="9.0">
+               <children>
+                  <Circle fx:id="node3" radius="38.0" stroke="BLACK" strokeType="INSIDE">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
@@ -197,23 +316,22 @@
                         </LinearGradient>
                      </fill>
                   </Circle>
-                  <Text fx:id="text7" strokeType="OUTSIDE" strokeWidth="0.0" text="7">
+                  <Text fx:id="text3" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
                      <font>
                         <Font size="30.0" />
                      </font>
                   </Text>
                </children>
             </StackPane>
-            <StackPane layoutX="650.0" layoutY="316.0" prefHeight="46.0" prefWidth="9.0" />
-            <StackPane layoutX="833.0" layoutY="353.0" prefHeight="46.0" prefWidth="9.0">
+            <StackPane layoutX="191.0" layoutY="224.0" prefHeight="86.0" prefWidth="96.0">
                <children>
-                  <Circle fx:id="node9" radius="38.0" stroke="BLACK" strokeType="INSIDE">
+                  <Circle fx:id="node2" radius="38.0" stroke="BLACK" strokeType="INSIDE">
                      <fill>
                         <LinearGradient endX="1.0" endY="1.0">
                            <stops>
                               <Stop>
                                  <color>
-                                    <Color red="0.05847953259944916" green="0.46335282921791077" blue="0.8421052694320679" />
+                                    <Color red="0.05882352963089943" green="0.4627451002597809" blue="0.843137264251709" />
                                  </color>
                               </Stop>
                               <Stop offset="1.0">
@@ -225,161 +343,58 @@
                         </LinearGradient>
                      </fill>
                   </Circle>
-                  <Text fx:id="text9" strokeType="OUTSIDE" strokeWidth="0.0" text="9">
+                  <Text fx:id="text2" strokeType="OUTSIDE" strokeWidth="0.0" text="2">
                      <font>
                         <Font size="30.0" />
                      </font>
                   </Text>
                </children>
             </StackPane>
-            <StackPane layoutX="483.0" layoutY="427.0" prefHeight="46.0" prefWidth="9.0" />
-            <Polygon layoutX="828.0" layoutY="109.0" points="-33.0, 27.0, -43.0, 9.0, -24.1578369140625, 9.0" rotate="-10.5" stroke="BLACK" strokeType="INSIDE" />
-            <Label fx:id="enemyLabel" alignment="CENTER_RIGHT" layoutX="-3.0" layoutY="511.0" prefHeight="46.0" prefWidth="402.0" text="Enter the base camp for the enemy base camp: " textFill="#46252a" AnchorPane.leftAnchor="-3.0">
+            <StackPane layoutX="41.0" layoutY="326.0" prefHeight="94.0" prefWidth="99.0">
+               <children>
+                  <Circle fx:id="node1" radius="38.0" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <LinearGradient endX="0.7867298578199052" endY="0.6587677725118484" startY="0.014218009478672966">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.1305890530347824" green="0.6447368264198303" blue="0.06268274784088135" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.006711409395973154">
+                                 <color>
+                                    <Color red="0.06771848350763321" green="0.3815789520740509" blue="0.01943226158618927" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.6073825503355703">
+                                 <color>
+                                    <Color red="0.3107638955116272" green="0.75" blue="0.2708333432674408" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.5127924084663391" green="0.8026315569877625" blue="0.5176230669021606" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Circle>
+                  <Text fx:id="text1" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Text>
+               </children>
+            </StackPane>
+            <Label fx:id="title" prefHeight="45.0" prefWidth="742.0" text="Enemy Fortress Attack" textFill="#46252a" AnchorPane.leftAnchor="0.0">
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font name="Gill Sans Ultra Bold" size="30.0" />
                </font>
+               <padding>
+                  <Insets bottom="10.0" right="10.0" top="20.0" />
+               </padding>
             </Label>
-            <Separator layoutX="-1.0" layoutY="492.0" prefHeight="17.0" prefWidth="960.0" />
-            <TextField fx:id="enemyTextField" layoutX="402.0" layoutY="514.0" prefHeight="35.0" prefWidth="76.0" promptText="2-10">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </TextField>
-            <Button fx:id="submitButton" layoutX="777.0" layoutY="554.0" mnemonicParsing="false" onAction="#submit" prefHeight="60.0" prefWidth="120.0" text="Submit" textFill="#46252a" AnchorPane.bottomAnchor="22.0" AnchorPane.rightAnchor="23.0">
-               <font>
-                  <Font name="Dosis ExtraBold" size="24.0" />
-               </font>
-            </Button>
-            <Label fx:id="bestPathLabel" alignment="TOP_LEFT" layoutX="-1.0" layoutY="552.0" prefHeight="76.0" prefWidth="717.0" text="Best path: " textFill="#006284" AnchorPane.leftAnchor="-1.0">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Label>
-            <Circle fx:id="node1" layoutX="90.0" layoutY="372.0" radius="38.0" stroke="BLACK" strokeType="INSIDE">
-               <fill>
-                  <LinearGradient endX="0.7867298578199052" endY="0.6587677725118484" startY="0.014218009478672966">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.1305890530347824" green="0.6447368264198303" blue="0.06268274784088135" />
-                           </color>
-                        </Stop>
-                        <Stop offset="0.006711409395973154">
-                           <color>
-                              <Color red="0.06771848350763321" green="0.3815789520740509" blue="0.01943226158618927" />
-                           </color>
-                        </Stop>
-                        <Stop offset="0.6073825503355703">
-                           <color>
-                              <Color red="0.3107638955116272" green="0.75" blue="0.2708333432674408" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="0.5127924084663391" green="0.8026315569877625" blue="0.5176230669021606" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </fill>
-            </Circle>
-            <Text fx:id="text1" layoutX="82.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Text>
-            <Circle fx:id="node6" layoutX="447.0" layoutY="296.0" radius="38.0" stroke="BLACK" strokeType="INSIDE">
-               <fill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.05847953259944916" green="0.46335282921791077" blue="0.8421052694320679" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="1.0" green="1.0" blue="1.0" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </fill>
-            </Circle>
-            <Circle fx:id="node10" layoutX="520.0" layoutY="431.0" radius="38.0" stroke="BLACK" strokeType="INSIDE">
-               <fill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.05847953259944916" green="0.46335282921791077" blue="0.8421052694320679" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="1.0" green="1.0" blue="1.0" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </fill>
-            </Circle>
-            <Text fx:id="text10" layoutX="502.0" layoutY="443.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Text>
-            <Text fx:id="text6" layoutX="439.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="6">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Text>
-            <Circle fx:id="node8" layoutX="693.0" layoutY="316.0" radius="38.0" stroke="BLACK" strokeType="INSIDE">
-               <fill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.05847953259944916" green="0.46335282921791077" blue="0.8421052694320679" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="1.0" green="1.0" blue="1.0" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </fill>
-            </Circle>
-            <Circle fx:id="node2" layoutX="240.0" layoutY="273.0" radius="38.0" stroke="BLACK" strokeType="INSIDE">
-               <fill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.05882352963089943" green="0.4627451002597809" blue="0.843137264251709" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="1.0" green="1.0" blue="1.0" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </fill>
-            </Circle>
-            <Text fx:id="text8" layoutX="685.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Text>
-            <Text fx:id="text2" layoutX="232.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Text>
          </children>
       </AnchorPane>
    </children>
