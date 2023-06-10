@@ -1,4 +1,4 @@
-package com.assignment;
+package com.assignment.backup;
 
 import java.util.Random;
 import java.util.Scanner;
