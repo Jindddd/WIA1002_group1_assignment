@@ -2,10 +2,7 @@ package com.assignment;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Alert;
+import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 
@@ -37,6 +34,8 @@ public class BorrowingArrowController extends ApplicationController {
     TextField backTextField;
     @FXML
     TextField arrowTextField;
+    @FXML
+    RadioButton advancedModeRButton;
 
     public void submit(ActionEvent event) {
         Color brown = new Color(0.2745, 0.1451, 0.1647, 1.0);
@@ -54,28 +53,35 @@ public class BorrowingArrowController extends ApplicationController {
             String right = rightTextField.getText();
             String back = backTextField.getText();
             String arrows = arrowTextField.getText();
+            int mode = advancedModeRButton.isSelected() ? 2 : 1;
             // Check if the input format is correct
             if (validate()) {
                 String[] arrowArr = arrows.split(",");
-                int previousArrow = Integer.MAX_VALUE;
-                for (String a : arrowArr) {
-                    int currentArrow = Integer.parseInt(a);
-                    // Check again if the arrows are in descending order
-                    if (currentArrow > previousArrow) {
-                        Alert alert = new Alert(Alert.AlertType.WARNING);
-                        alert.setTitle("Warning");
-                        alert.setHeaderText("Wrong Input");
-                        alert.setContentText("Invalid input for arrows. Arrows must be in descending order.");
-                        alert.showAndWait();
-                        arrowLabel.setTextFill(Paint.valueOf("red"));
-                        isInputValid = false;
+                if (mode == 1) {
+                    int previousArrow = Integer.MAX_VALUE;
+                    for (String a : arrowArr) {
+                        int currentArrow = Integer.parseInt(a);
+                        // Check again if the arrows are in descending order
+                        if (currentArrow > previousArrow) {
+                            Alert alert = new Alert(Alert.AlertType.WARNING);
+                            alert.setTitle("Warning");
+                            alert.setHeaderText("Wrong Input");
+                            alert.setContentText("Invalid input for arrows. Arrows must be in descending order.");
+                            alert.showAndWait();
+                            arrowLabel.setTextFill(Paint.valueOf("red"));
+                            isInputValid = false;
+                        }
+                        previousArrow = currentArrow;
+                        arrowList.add(currentArrow);
                     }
-                    previousArrow = currentArrow;
-                    arrowList.add(currentArrow);
+                } else {
+                    for (String arrow : arrowArr) {
+                        arrowList.add(Integer.parseInt(arrow));
+                    }
                 }
                 if (isInputValid) {
                     calculateBoatDirections(Integer.parseInt(front), Integer.parseInt(left), Integer.parseInt(right),
-                            Integer.parseInt(back), arrowList);
+                            Integer.parseInt(back), arrowList, mode);
                 }
             }
 
@@ -86,10 +92,14 @@ public class BorrowingArrowController extends ApplicationController {
             alert.setHeaderText("Wrong Input");
             alert.setContentText("Enter only integer!!!");
             alert.showAndWait();
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            arrowList.clear();
         }
     }
 
-    public void calculateBoatDirections(int front, int left, int right, int back, List<Integer> arrowList) {
+    public void calculateBoatDirections(int front, int left, int right, int back, List<Integer> arrowList,int mode) {
+        StringBuilder result = new StringBuilder();
         List<String> boatDirections = new ArrayList<>();
         List<Integer> captured = new ArrayList<>();
 
@@ -108,31 +118,45 @@ public class BorrowingArrowController extends ApplicationController {
                 default ->  /* Back */ (int) (arrowCount * (newBack / 100.0));
             };
 
-            // Add number of captured arrows
-            captured.add(capture);
-            // Add boat direction
-            boatDirections.add(direction);
+            if (capture > 0) {
+                // Add number of captured arrows
+                captured.add(capture);
+                // Add boat direction
+                boatDirections.add(direction);
+            }
 
             // Update efficiency of the straw men left
-            switch (direction) {
-                case "front" ->
-                        newFront = newFront > (front * 80 / 100) ? (front * 80 / 100) :
-                                newFront > (front * 40 / 100) ? (front * 40 / 100) : 0;
-                case "left" ->
-                        newLeft = newLeft > (left * 80 / 100) ? (left * 80 / 100) :
-                                newLeft > (left * 40 / 100) ? (left * 40 / 100) : 0;
-                case "right" ->
-                        newRight = newRight > (right * 80 / 100) ? (right * 80 / 100) :
-                                newRight > (right * 40 / 100) ? (right * 40 / 100) : 0;
-                case "back" ->
-                        newBack = newBack > (back * 80 / 100) ? (back * 80 / 100) :
-                                newBack > (back * 40 / 100) ? (back * 40 / 100) : 0;
+            if (mode == 1) {
+                switch (direction) {
+                    case "front" ->
+                            newFront = newFront > (front * 80 / 100) ? (front * 80 / 100)
+                                    : newFront > (front * 40 / 100) ? (front * 40 / 100) : 0;
+                    case "left" ->
+                            newLeft = newLeft > (left * 80 / 100) ? (left * 80 / 100)
+                                    : newLeft > (left * 40 / 100) ? (left * 40 / 100) : 0;
+                    case "right" ->
+                            newRight = newRight > (right * 80 / 100) ? (right * 80 / 100)
+                                    : newRight > (right * 40 / 100) ? (right * 40 / 100) : 0;
+                    case "back" ->
+                            newBack = newBack > (back * 80 / 100) ? (back * 80 / 100)
+                                    : newBack > (back * 40 / 100) ? (back * 40 / 100) : 0;
+                }
+            } else if (mode == 2) {
+                switch (direction) {
+                    case "front" ->
+                            newFront = newFront > (front * 50 / 100) ? (front * 50 / 100) : 0;
+                    case "left" ->
+                            newLeft = newLeft > (left * 50 / 100) ? (left * 50 / 100) : 0;
+                    case "right" ->
+                            newRight = newRight > (right * 50 / 100) ? (right * 50 / 100) : 0;
+                    case "back" ->
+                            newBack = newBack > (back * 50 / 100) ? (back * 50 / 100) : 0;
+                }
             }
         }
-        String text = "Boat direction: " + boatDirections + "\n" +
-                "Arrow received: " + captured + "\n" +
-                "Total: " + calculateTotalArrowsCaptured(captured);
-        borrowingArrowLabel.setText(text);
+        result.append(mode == 1 ? "The number of arrows shot should be in decreasing order." : "The number of arrows shot is random.").append("\n");
+        result.append("Boat direction: ").append(boatDirections).append("\n").append("Arrow received: ").append(captured).append("\n").append("Total: ").append(calculateTotalArrowsCaptured(captured));
+        borrowingArrowLabel.setText(result.toString());
     }
 
     public static String findMaximum(int front, int left, int right, int back) {
