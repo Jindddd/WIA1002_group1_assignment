@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 
 import java.util.ArrayList;
@@ -38,14 +39,15 @@ public class BorrowingArrowController extends ApplicationController {
     TextField arrowTextField;
 
     public void submit(ActionEvent event) {
+        Color brown = new Color(0.2745, 0.1451, 0.1647, 1.0);
         List<Integer> arrowList = new ArrayList<>();
         boolean isInputValid = true;
         // Reset the label text to black
-        frontLabel.setTextFill(Paint.valueOf("black"));
-        leftLabel.setTextFill(Paint.valueOf("black"));
-        rightLabel.setTextFill(Paint.valueOf("black"));
-        backLabel.setTextFill(Paint.valueOf("black"));
-        arrowLabel.setTextFill(Paint.valueOf("black"));
+        frontLabel.setTextFill(brown);
+        leftLabel.setTextFill(brown);
+        rightLabel.setTextFill(brown);
+        backLabel.setTextFill(brown);
+        arrowLabel.setTextFill(brown);
         try {
             String front = frontTextField.getText();
             String left = leftTextField.getText();
@@ -187,7 +189,7 @@ public class BorrowingArrowController extends ApplicationController {
             arrowLabel.setTextFill(Paint.valueOf("red"));
         }
         if (!arrowTextField.getText().matches("\\d+(,\\d+)*")) {
-            errors.append("Invalid input. Arrows must be in the format: [2000,1500,1000,...]");
+            errors.append("Invalid input. Arrows must be in the format: 2000,1500,1000,...");
             arrowLabel.setTextFill(Paint.valueOf("red"));
         }
 

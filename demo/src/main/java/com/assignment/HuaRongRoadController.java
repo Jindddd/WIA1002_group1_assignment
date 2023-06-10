@@ -122,9 +122,6 @@ public class HuaRongRoadController extends ApplicationController {
     }
 
     public static boolean isValid(int x, int y) {
-        if (x < 0 || y < 0 || x >= maze.length || y >= maze[0].length || maze[x][y] == 1 || pathMaze[x][y] == '.') {
-            return false;
-        }
-        return true;
+        return x >= 0 && y >= 0 && x < maze.length && y < maze[0].length && maze[x][y] != 1 && pathMaze[x][y] != '.';
     }
 }

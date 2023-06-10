@@ -1,10 +1,7 @@
 package com.assignment;
 
 import javafx.event.ActionEvent;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.stage.Stage;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.implementations.MultiGraph;
 import org.graphstream.ui.spriteManager.Sprite;
@@ -16,11 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class HierarchyController extends ApplicationController {
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
-
-    public void printHierarchy(ActionEvent event) throws IOException {
+    public void printHierarchy(ActionEvent event) {
         System.setProperty("org.graphstream.ui", "swing");
         Graph graph = new MultiGraph("Hierarchy of Wu Kingdom");
 

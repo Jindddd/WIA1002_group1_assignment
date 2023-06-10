@@ -5,6 +5,7 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
@@ -22,7 +23,7 @@
                   <Insets bottom="20.0" right="10.0" top="20.0" />
                </padding>
             </Label>
-            <RadioButton fx:id="sortGeneralRButton" layoutX="245.0" layoutY="86.0" mnemonicParsing="false" onAction="#showOperation" selected="true" text="Sort Generals" textFill="#46252a" AnchorPane.leftAnchor="245.0">
+            <RadioButton fx:id="sortGeneralRButton" layoutX="246.0" layoutY="86.0" mnemonicParsing="false" selected="true" text="Sort Generals" textFill="#46252a" AnchorPane.leftAnchor="240.0">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -30,12 +31,12 @@
                   <ToggleGroup fx:id="generalRButton" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton fx:id="suggestGeneralRButton" layoutX="425.0" layoutY="85.0" mnemonicParsing="false" onAction="#showOperation" text="Suggest Generals" textFill="#46252a" toggleGroup="$generalRButton" AnchorPane.leftAnchor="425.0">
+            <RadioButton fx:id="suggestGeneralRButton" layoutX="426.0" layoutY="85.0" mnemonicParsing="false" text="Suggest Generals" textFill="#46252a" toggleGroup="$generalRButton" AnchorPane.leftAnchor="420.0">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </RadioButton>
-            <RadioButton fx:id="searchGeneralRButton" layoutX="635.0" layoutY="86.0" mnemonicParsing="false" onAction="#showOperation" text="Search Generals" textFill="#46252a" toggleGroup="$generalRButton" AnchorPane.leftAnchor="635.0">
+            <RadioButton fx:id="searchGeneralRButton" layoutX="636.0" layoutY="86.0" mnemonicParsing="false" onAction="#showOperation" text="Search Generals" textFill="#46252a" toggleGroup="$generalRButton" AnchorPane.leftAnchor="630.0">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -45,8 +46,8 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <ChoiceBox fx:id="attributeChoiceBox" layoutX="245.0" layoutY="130.0" prefHeight="33.0" prefWidth="160.0" />
-            <Label fx:id="attributeLabel" layoutX="8.0" layoutY="133.0" text="Choose a attribute to sort:" textFill="#46252a" AnchorPane.leftAnchor="8.0">
+            <ChoiceBox fx:id="attributeChoiceBox" layoutX="240.0" layoutY="137.0" prefHeight="33.0" prefWidth="160.0" AnchorPane.leftAnchor="240.0" />
+            <Label fx:id="attributeLabel" layoutX="69.0" layoutY="138.0" text="Choose a attribute:" textFill="#46252a" AnchorPane.leftAnchor="69.0">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -56,17 +57,65 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Button>
-            <Label fx:id="resultLabel" alignment="TOP_LEFT" layoutX="460.0" layoutY="128.0" prefHeight="413.0" prefWidth="469.0" text="Results will be shown here.&#10;" textFill="#46252a" AnchorPane.leftAnchor="460.0" AnchorPane.rightAnchor="51.0">
+            <Label fx:id="resultLabel" alignment="TOP_LEFT" layoutX="464.0" layoutY="140.0" prefHeight="395.0" prefWidth="465.0" text="Results will be shown here.&#10;" textFill="#006284" wrapText="true" AnchorPane.leftAnchor="464.0" AnchorPane.rightAnchor="51.0">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label fx:id="attributeLabel1" layoutX="18.0" layoutY="190.0" text="Choose a minimum level:" textFill="#46252a">
+            <Label fx:id="minimumLevelLabel" layoutX="18.0" layoutY="192.0" text="Choose a minimum level:" textFill="#46252a">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <ChoiceBox fx:id="minimumLevelChoiceBox" layoutX="245.0" layoutY="187.0" prefHeight="33.0" prefWidth="160.0" />
+            <ChoiceBox fx:id="minimumLevelChoiceBox" layoutX="240.0" layoutY="190.0" prefHeight="33.0" prefWidth="160.0" />
+            <Label fx:id="searchTypeLabel" layoutX="47.0" layoutY="192.0" text="Choose a search type:" textFill="#46252a">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="rangeRButton" layoutX="240.0" layoutY="193.0" mnemonicParsing="false" selected="true" text="Range" textFill="#46252a" AnchorPane.leftAnchor="240.0" AnchorPane.topAnchor="193.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="searchTypeRButton" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="specificRButton" layoutX="240.0" layoutY="223.0" mnemonicParsing="false" text="Specific value" textFill="#46252a" toggleGroup="$searchTypeRButton" AnchorPane.leftAnchor="240.0" AnchorPane.topAnchor="223.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </RadioButton>
+            <Label fx:id="minimumLabel" layoutX="137.0" layoutY="274.0" text="Minimum: " textFill="#46252a">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="minimumTextField" layoutX="241.0" layoutY="268.0" prefHeight="39.0" prefWidth="130.0" promptText="1-100" AnchorPane.leftAnchor="241.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </TextField>
+            <Label fx:id="maximumLabel" layoutX="137.0" layoutY="325.0" text="Maximum" textFill="#46252a">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="maximumTextField" layoutX="241.0" layoutY="321.0" prefHeight="39.0" prefWidth="130.0" promptText="1-100" AnchorPane.leftAnchor="241.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </TextField>
+            <Label fx:id="specificValueLabel" layoutX="101.0" layoutY="274.0" mouseTransparent="true" text="Specific Value: " textFill="#46252a">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="specificValueTextField" layoutX="241.0" layoutY="268.0" prefHeight="39.0" prefWidth="130.0" promptText="1-100">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </TextField>
          </children>
       </AnchorPane>
       <VBox fx:id="buttonVBox" alignment="CENTER" layoutX="-2.0" layoutY="-3.0" prefHeight="720.0" prefWidth="300.0" spacing="20.0" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="11.0">
