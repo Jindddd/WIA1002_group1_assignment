@@ -2,10 +2,7 @@ package com.assignment;
 
 import java.util.ArrayList;
 
-class DataOfKingdom {
-    CharacterNode<String> root;
-    CharacterNode<String> node0;
-    CharacterNode<String> node1;
+public class DataOfKingdom {
     ArrayList<CharacterNode<String>> generalList = new ArrayList<>();
     public DataOfKingdom() {
         CharacterNode<String> root = new CharacterNode<>("Sun Quan", "Emperor", "Cavalry", 98, 96, 72, 77, 95);
