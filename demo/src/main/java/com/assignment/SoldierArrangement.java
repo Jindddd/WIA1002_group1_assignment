@@ -5,9 +5,7 @@ import java.util.*;
 public class SoldierArrangement{
     public static void main(String[] args) {
         List<General> generals = new ArrayList<>();
-        /*generals.add(new General("Sun Quan", 96, 98, 72, 77, 95));
-        generals.add(new General("Zhang Zhao", 22, 80, 89, 99, 60));
-        generals.add(new General("Zhou Yu", 80, 86, 97, 80, 90));*/
+       
         generals.add(new General("Xu Sheng", 90, 78, 72, 40, 94));
         generals.add(new General("Zhu Ge Jin", 63, 61, 88, 82, 71));
         generals.add(new General("Lu Su", 43, 87, 84, 88, 53));
@@ -290,6 +288,7 @@ public class SoldierArrangement{
             // the min and max point will be changed to allow other generals that dont have point in range to be inserted into a team
             
             teamAbilitySum = 0;
+            
             if (field.equals("Intelligence")){
                 // special case for Intelligence level C team
                 // allowing to create a team of 3 generals by [ 43, 45, 72 ]
@@ -313,6 +312,83 @@ public class SoldierArrangement{
                         }
                     }
                 }
+            
+            else if (field.equals("Strength")){
+                // special case for Strength level A team
+                // allowing to create a team of 3 generals by [ 70, 83, 90 ] = 243
+                if (maximumPoints == 83 && minimumPoints == 75) {
+                    maximumPoints = 90;
+                    minimumPoints = 70;
+                }
+                for (General general : generals) {
+                    int ability = general.getAbility(field);
+
+                    if (ability >= minimumPoints && ability <= maximumPoints) {
+                        if (!team.contains(90)){
+                            if (!team.contains(general)) {
+                                team.add(general);
+                                teamAbilitySum += ability;
+                            }
+                        }
+                    }
+                    if (team.size() == 3 && teamAbilitySum >= minimumAbility) {
+                        //  break if a team of 3 successfully created
+                        break;
+                    }
+                }
+            }
+
+            if (field.equals("Politic")){
+                // special case for Politic level B team
+                // allowing to create a team of 3 generals by [ 43, 77, 82 ] = 202
+                if (maximumPoints == 74 && minimumPoints == 64) {
+                    maximumPoints = 82;
+                    minimumPoints = 43;
+                }
+                for (General general : generals) {
+                    int ability = general.getAbility(field);
+
+                    if (ability >= minimumPoints && ability <= maximumPoints && ability != 62) {
+
+                            if (!team.contains(43)) {
+                                if (!team.contains(general)) {
+                                    team.add(general);
+                                    teamAbilitySum += ability;
+                                }
+                            }
+
+                    }
+                    if (team.size() == 3 && teamAbilitySum >= minimumAbility) {
+                        //  break if a team of 3 successfully created
+                        break;
+                    }
+                }
+            }
+
+            else if (field.equals("Hitpoint")){
+                // special case for Hitpoint level B team
+                // allowing to create a team of 3 generals by [ 53, 71, 88 ] = 212
+                if (maximumPoints == 74 && minimumPoints == 64) {
+                    maximumPoints = 88;
+                    minimumPoints = 53;
+                }
+                for (General general : generals) {
+                    int ability = general.getAbility(field);
+
+                    if (ability >= minimumPoints && ability <= maximumPoints) {
+                        if (!team.contains(88)){
+                            if (!team.contains(general)) {
+                                team.add(general);
+                                teamAbilitySum += ability;
+                            }
+                        }
+                    }
+                    if (team.size() == 3 && teamAbilitySum >= minimumAbility) {
+                        //  break if a team of 3 successfully created
+                        break;
+                    }
+                }
+            }
 
                 else {
                     // for the other case 
