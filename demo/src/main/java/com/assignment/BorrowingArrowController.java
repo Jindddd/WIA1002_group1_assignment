@@ -2,14 +2,17 @@ package com.assignment;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
-public class BorrowingArrowController extends ApplicationController {
+public class BorrowingArrowController extends ApplicationController implements Initializable {
     @FXML
     Label borrowingArrowLabel;
     @FXML
@@ -22,6 +25,10 @@ public class BorrowingArrowController extends ApplicationController {
     Label backLabel;
     @FXML
     Label arrowLabel;
+    @FXML
+    Label simpleArrowPromptLabel;
+    @FXML
+    Label advancedArrowPromptLabel;
     @FXML
     Button submitButton;
     @FXML
@@ -36,6 +43,22 @@ public class BorrowingArrowController extends ApplicationController {
     TextField arrowTextField;
     @FXML
     RadioButton advancedModeRButton;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        advancedModeRButton.setOnAction(this::showOperation);
+        advancedArrowPromptLabel.setVisible(false);
+    }
+
+    public void showOperation(ActionEvent event) {
+        if(advancedModeRButton.isSelected()) {
+            advancedArrowPromptLabel.setVisible(true);
+            simpleArrowPromptLabel.setVisible(false);
+        } else {
+            advancedArrowPromptLabel.setVisible(false);
+            simpleArrowPromptLabel.setVisible(true);
+        }
+    }
 
     public void submit(ActionEvent event) {
         Color brown = new Color(0.2745, 0.1451, 0.1647, 1.0);
