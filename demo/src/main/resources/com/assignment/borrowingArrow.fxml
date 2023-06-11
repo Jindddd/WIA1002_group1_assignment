@@ -145,7 +145,7 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </RadioButton>
-            <Label fx:id="advancedArrowPromptLabel" layoutX="10.0" layoutY="350.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="936.0" text="Enter the number of arrows shot in each wave. The number of arrows shot is random. Please enter the arrows in the format: [2000,1500,1000,...]" textFill="#46252a" visible="false" wrapText="true">
+            <Label fx:id="advancedArrowPromptLabel" layoutX="10.0" layoutY="350.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="936.0" text="Enter the number of arrows shot in each wave. The number of arrows shot is random. Please enter the arrows in the format: 2000,1500,1000,..." textFill="#46252a" visible="false" wrapText="true">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
