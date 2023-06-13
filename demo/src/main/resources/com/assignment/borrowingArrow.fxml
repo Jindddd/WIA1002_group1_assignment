@@ -61,7 +61,7 @@
       </VBox>
       <AnchorPane layoutX="300.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="980.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label layoutX="10.0" layoutY="77.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="920.0" text="Enter number of Enter number of straw men for the directions. Number of straw men in one direction must be 0-100." textFill="#46252a" wrapText="true" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="77.0">
+            <Label layoutX="10.0" layoutY="77.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="920.0" text="Enter number of straw men for the directions. Number of straw men in one direction must be 0-100." textFill="#46252a" wrapText="true" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="77.0">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
