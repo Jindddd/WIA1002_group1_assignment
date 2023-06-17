@@ -139,11 +139,8 @@ public class RedCliffController extends ApplicationController {
             matrixLabel.setTextFill(Paint.valueOf("red"));
         }
 
-        if (matrixTextArea.getText().trim().isEmpty()) {
-            errors.append("Please enter the matrix\n");
-            matrixLabel.setTextFill(Paint.valueOf("red"));
-
-            // If the matrixTextArea is not empty, check if the matrix is valid
+        // If the matrixTextArea is not empty, check if the matrix is valid
+        if (!matrixTextArea.getText().trim().isEmpty()) {
             String matrix = matrixTextArea.getText().replaceAll("\\s+",""); // Remove all the white spaces
             // Counter to keep track of the matrix
             int counter = 0;
