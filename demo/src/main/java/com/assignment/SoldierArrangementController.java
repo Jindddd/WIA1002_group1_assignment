@@ -71,6 +71,11 @@ public class SoldierArrangementController extends ApplicationController implemen
     }
 
     public void showOperation(ActionEvent event) {
+        Color brown = new Color(0.2745, 0.1451, 0.1647, 1.0);
+        attributeLabel.setTextFill(brown);
+        minimumLevelLabel.setTextFill(brown);
+        minimumLabel.setTextFill(brown);
+        maximumLabel.setTextFill(brown);
         String mode = sortGeneralRButton.isSelected() ? "Sort" :
                 suggestGeneralRButton.isSelected() ? "Suggest" : "Search";
         if (mode.equals("Sort")) {
